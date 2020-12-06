@@ -10,7 +10,7 @@ npm install hexo-generator-sitemap --save
 npm install hexo-generator-baidu-sitemap --save
 ```
 
-安装百度 sitemap 插件和网站的 sitemap 插件
+首先用 npm 安装百度 sitemap 插件和网站的 sitemap 插件,之后在\_config.yml 文件添加下面的配置
 
 ```
 sitemap:
@@ -41,10 +41,12 @@ baidusitemap:
 最后的 https 认证一般两天就能通过
 ![通过](7.png)
 
-#google sitemap
-![验证](8.png)
-点击所有权认证其他和百度的方法一样在 head.ejs 里面添加给你的 html 代码
+# google sitemap
 
-#提交连接
+![验证](8.png)
+点击所有权认证其他和百度的方法一样在 head.ejs 里面添加给你的 html 代码,在站点地图的地方提交你的 sitemap
+
+# 提交连接
+
 [百度](https://ziyuan.baidu.com/site/index)
 [google](https://search.google.com/search-console)
