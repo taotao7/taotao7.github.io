@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://taotao7.github.io/2020/12/07/axios%E5%AE%9E%E7%8E%B0%E6%8C%89%E9%92%AE%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2020-12-07</lastmod>
+  </url>
+  <url>
     <loc>https://taotao7.github.io/2020/12/06/koa%E9%AA%8C%E8%AF%81%E7%A0%81-svg-captcha/</loc>
     <lastmod>2020-12-06</lastmod>
   </url>
