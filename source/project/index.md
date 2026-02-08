@@ -4,30 +4,37 @@ date: 2024-03-15 14:00:00
 layout: page
 ---
 
+## Commercial Projects
+
+### [Medium API](https://medium-api.taotao7.top/)
+
+A powerful REST API that provides comprehensive access to Medium's content, users, publications, and more. Build content aggregators, analytics tools, reading apps, or research platforms.
+
 ## Featured Projects
 
 ### [termdev](https://github.com/taotao7/termdev) ⭐ 100
+
 A must-have tool for front-end developers and terminal enthusiasts — connects to Chrome's DevTools from the terminal.
 
 ### [Diana](https://github.com/taotao7/Diana) ⭐ 4
+
 The ultimate mission control for your AI agents. Manages directives, monitors outputs, and tracks token usage.
 
 ### [EmbyApi](https://github.com/taotao7/EmbyApi) ⭐ 2
+
 OpenAPI client for Emby media server.
 
-### [desktop-assistant](https://github.com/taotao7/desktop-assistant) ⭐ 1
-A desktop assistant application for increased productivity.
-
 ### [dotfile](https://github.com/taotao7/dotfile) ⭐ 1
+
 Personal dotfile configuration for development environment.
 
 ### [gh-release-oss](https://github.com/taotao7/gh-release-oss) ⭐ 1
+
 GitHub CLI extension for releasing assets to OSS (Object Storage Service).
 
 ## Developer Tools
 
 - **[agent-skills-hub](https://github.com/taotao7/agent-skills-hub)** - Multi-skill workspace for agent automation utilities
-- **[my-tools](https://github.com/taotao7/my-tools)** - Collection of useful development tools
 - **[tauri-action-oss](https://github.com/taotao7/tauri-action-oss)** - Build Tauri apps and upload to OSS
 - **[neo-dotfile](https://github.com/taotao7/neo-dotfile)** - Dotfile management with chezmoi
 
@@ -45,8 +52,6 @@ GitHub CLI extension for releasing assets to OSS (Object Storage Service).
 
 ## Web Projects
 
-- **[medium-api-official-site](https://github.com/taotao7/medium-api-official-site)** - Medium API official website
-- **[medium-api-worker](https://github.com/taotao7/medium-api-worker)** - Medium API worker service
 - **[my-react-template](https://github.com/taotao7/my-react-template)** - React template for rapid backend business development
 - **[Neutralino-React-Ts-Shadcn](https://github.com/taotao7/Neutralino-React-Ts-Shadcn)** - Neutralino React TypeScript Shadcn template
 
@@ -65,12 +70,6 @@ GitHub CLI extension for releasing assets to OSS (Object Storage Service).
 - **[neoseoul-theme](https://github.com/taotao7/neoseoul-theme)** - Neo Seoul color theme
 - **[carbon-theme](https://github.com/taotao7/carbon-theme)** - Carbon color theme
 
-## Games & Experimental
-
-- **[trpg-online](https://github.com/taotao7/trpg-online)** - Online TRPG (Tabletop Role-Playing Game) platform
-- **[SouthwardBound](https://github.com/taotao7/SouthwardBound)** - Personal game project
-- **[ai2everything](https://github.com/taotao7/ai2everything)** - A pure cursor-driven AI project
-
 ---
 
-*More projects available on [GitHub](https://github.com/taotao7?tab=repositories)*
+_More projects available on [GitHub](https://github.com/taotao7?tab=repositories)_

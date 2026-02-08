@@ -14,7 +14,7 @@ Starting today with Sorting.
 
 ### Quick Sort
 
-*   **Average Case**: O(n log n)
-*   **Worst Case**: O(n²)
+- **Average Case**: O(n log n)
+- **Worst Case**: O(n²)
 
 ![Quick Sort](1.png)

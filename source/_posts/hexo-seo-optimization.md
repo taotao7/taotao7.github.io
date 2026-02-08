@@ -58,5 +58,5 @@ Similar to Baidu, verify ownership and then submit your sitemap URL in the Searc
 
 ## Links
 
-*   [Baidu Webmaster Tools](https://ziyuan.baidu.com/site/index)
-*   [Google Search Console](https://search.google.com/search-console)
+- [Baidu Webmaster Tools](https://ziyuan.baidu.com/site/index)
+- [Google Search Console](https://search.google.com/search-console)

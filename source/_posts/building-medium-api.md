@@ -19,12 +19,12 @@ Same old drill, it's hosted on **RapidAPI**. Grab a key and you're good to go.
 
 Let's cut the fluff. Here's what you can query:
 
-*   **Articles**: Want Markdown? HTML? Plain text? You got it. You can even check claps and followers.
-*   **Users**: Like a background check. Who follows whom, who wrote what, public info... it's all there.
-*   **Publications**: Want to see what a specific column published? No problem.
-*   **Search**: Full-text search. Search whatever you want, even by tags.
-*   **Discovery**: The so-called "recommendation algo" data. Top articles, top writers, served up on a platter.
-*   **Lists**: Other people's reading lists. Grab 'em.
+- **Articles**: Want Markdown? HTML? Plain text? You got it. You can even check claps and followers.
+- **Users**: Like a background check. Who follows whom, who wrote what, public info... it's all there.
+- **Publications**: Want to see what a specific column published? No problem.
+- **Search**: Full-text search. Search whatever you want, even by tags.
+- **Discovery**: The so-called "recommendation algo" data. Top articles, top writers, served up on a platter.
+- **Lists**: Other people's reading lists. Grab 'em.
 
 ## Give It a Spin
 
@@ -36,13 +36,13 @@ Just toss `x-rapidapi-host` and `x-rapidapi-key` in the header. Get your key at 
 
 ```javascript
 const response = await fetch(
-  'https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890',
+  "https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890",
   {
     headers: {
-      'x-rapidapi-host': 'unofficial-medium-api-wrapper.p.rapidapi.com',
-      'x-rapidapi-key': 'YOUR_RAPIDAPI_KEY'
-    }
-  }
+      "x-rapidapi-host": "unofficial-medium-api-wrapper.p.rapidapi.com",
+      "x-rapidapi-key": "YOUR_RAPIDAPI_KEY",
+    },
+  },
 );
 const data = await response.json();
 console.log(data); // Done.

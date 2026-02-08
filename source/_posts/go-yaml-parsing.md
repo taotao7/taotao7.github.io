@@ -39,7 +39,7 @@ func main(){
     // Initialize the struct
     todolists := TodoLists{}
     filePath := "./config.yaml"
-    
+
     buffer, err := ioutil.ReadFile(filePath)
 
     if err != nil {

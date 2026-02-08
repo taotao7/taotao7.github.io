@@ -22,30 +22,30 @@ Create an endpoint to serve the captcha:
 
 **Key Points:**
 
-*   **Case Sensitivity**: Always use `toLowerCase()` when storing/comparing the text, otherwise validation will fail unexpectedly.
-*   **Session**: You need `koa-session` to store the correct captcha text (`ctx.session.captcha`) for later verification.
-*   **Content-Type**: Set the header to `image/svg+xml` so the browser renders it as an image.
+- **Case Sensitivity**: Always use `toLowerCase()` when storing/comparing the text, otherwise validation will fail unexpectedly.
+- **Session**: You need `koa-session` to store the correct captcha text (`ctx.session.captcha`) for later verification.
+- **Content-Type**: Set the header to `image/svg+xml` so the browser renders it as an image.
 
 # Session Configuration
 
 You need to configure `koa-session` for this to work:
 
 ```javascript
-const KoaSession = require("koa-session")
+const KoaSession = require("koa-session");
 const sessionConfig = {
-    key: "appletSystem:sess",
-    maxAge: 3000 * 60, // 3 minutes
-    autoCommit: true,
-    overwrite: true,
-    httpOnly: true,
-    signed: true,
-    rolling: true,
-    renew: true
-}
-const sessionSignedKey = ['appletSystem'] // Secret key
-const session = new KoaSession(sessionConfig, app)
-app.keys = sessionSignedKey
-app.use(session)
+  key: "appletSystem:sess",
+  maxAge: 3000 * 60, // 3 minutes
+  autoCommit: true,
+  overwrite: true,
+  httpOnly: true,
+  signed: true,
+  rolling: true,
+  renew: true,
+};
+const sessionSignedKey = ["appletSystem"]; // Secret key
+const session = new KoaSession(sessionConfig, app);
+app.keys = sessionSignedKey;
+app.use(session);
 ```
 
 # Verification

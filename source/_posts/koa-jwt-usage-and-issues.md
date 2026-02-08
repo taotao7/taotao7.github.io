@@ -23,9 +23,9 @@ Here's a simplified login flow (password encryption omitted for brevity):
 
 1.  **Verify Credentials**: Check username and password against the database (e.g., using Sequelize).
 2.  **Sign Token**: If valid, use `jwt.sign()` to create a token.
-    *   **Payload**: I include `authorized` status and `userName` (or role/permissions) to facilitate permission checks later.
-    *   **Secret**: Must match the one in `app.use(jwt(...))`.
-    *   **Options**: Set an expiration time (e.g., `1h`).
+    - **Payload**: I include `authorized` status and `userName` (or role/permissions) to facilitate permission checks later.
+    - **Secret**: Must match the one in `app.use(jwt(...))`.
+    - **Options**: Set an expiration time (e.g., `1h`).
 3.  **Response**: Return the token. **Important**: The token standard usually requires the `Bearer ` prefix (with a space) when sending it back in the Authorization header, though here we just return the raw token string for the client to handle.
 
 ![Controller Logic](2.png)
