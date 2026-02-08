@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__left">
+      <span>&copy; <%= new Date().getFullYear() %> <%= config.author || config.title %></span>
+      <span class="footer__sep">&middot;</span>
+      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+    </div>
+    <div class="footer__right">
+      <% if (theme.social) { %>
+        <% if (theme.social.github) { %>
+          <a class="footer__social" href="https://github.com/<%= theme.social.github %>" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <% } %>
+        <% if (theme.social.twitter) { %>
+          <a class="footer__social" href="https://twitter.com/<%= theme.social.twitter %>" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+        <% } %>
+        <% if (theme.social.email) { %>
+          <a class="footer__social" href="mailto:<%= theme.social.email %>" aria-label="Email">Email</a>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+</footer>

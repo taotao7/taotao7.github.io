@@ -1,0 +1,79 @@
+<% 
+  var allPosts = site.posts.sort('-date');
+  var featuredCount = theme.featured_count || 2;
+  
+  // Get featured posts: sticky or featured front-matter
+  var featuredPosts = allPosts.filter(function(post) {
+    return post.sticky || post.featured;
+  }).sort(function(a, b) {
+    var sa = typeof a.sticky === 'number' ? a.sticky : (a.sticky ? 1 : 0);
+    var sb = typeof b.sticky === 'number' ? b.sticky : (b.sticky ? 1 : 0);
+    return sb - sa;
+  }).slice(0, featuredCount);
+  
+  // Chronicle: all posts by date (excluding featured from top, but still show in timeline)
+  var chroniclePosts = page.posts || allPosts;
+  
+  // Group by month
+  var grouped = {};
+  chroniclePosts.forEach(function(post) {
+    var key = date(post.date, 'YYYY-MM');
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(post);
+  });
+  var months = Object.keys(grouped).sort().reverse();
+  
+  // Section posts
+  var sections = theme.sections || {};
+%>
+
+<% if (featuredPosts.length > 0) { %>
+<section class="section section--featured">
+  <%- partial('_partial/section-header', { title: 'Featured', description: '' }) %>
+  <div class="featured-list">
+    <% featuredPosts.forEach(function(post) { %>
+      <%- partial('_partial/featured-item', { item: post }) %>
+    <% }) %>
+  </div>
+</section>
+<% } %>
+
+<section class="section section--chronicle">
+  <%- partial('_partial/section-header', { title: 'Chronicle', description: 'All posts in reverse chronological order' }) %>
+  <div class="chronicle-list">
+    <% months.forEach(function(month) { %>
+      <div class="chronicle-month">
+        <div class="chronicle-month__label"><%= month %></div>
+        <div class="chronicle-month__posts">
+          <% grouped[month].forEach(function(post) { %>
+            <%- partial('_partial/post-card', { item: post }) %>
+          <% }) %>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  <%- partial('_partial/pagination') %>
+</section>
+
+<%
+  // Render typed sections
+  var sectionKeys = Object.keys(sections);
+  sectionKeys.forEach(function(key) {
+    var sec = sections[key];
+    var typePosts = allPosts.filter(function(post) {
+      return post.type === sec.type;
+    }).slice(0, 8);
+    if (typePosts.length > 0) {
+%>
+<section class="section section--typed">
+  <%- partial('_partial/section-header', { title: sec.title, description: sec.description || '' }) %>
+  <div class="typed-list">
+    <% typePosts.forEach(function(post) { %>
+      <%- partial('_partial/post-card', { item: post }) %>
+    <% }) %>
+  </div>
+</section>
+<%
+    }
+  });
+%>

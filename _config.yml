@@ -8,7 +8,7 @@ subtitle: "前端，后端，nodejs"
 description: "技术blog"
 keywords: 'nodejs c# js ts python'
 author: tao
-language: zh-CN
+language: en
 timezone: "Asia/Shanghai"
 
 # URL
@@ -98,12 +98,16 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: geek
+theme: chronicle
 
 sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -134,4 +138,3 @@ live2d:
     show: true
   react:
     opacity: 0.7
-

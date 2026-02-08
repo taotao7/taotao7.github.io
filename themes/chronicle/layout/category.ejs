@@ -1,0 +1,21 @@
+<section class="taxonomy">
+  <% if (page.category) { %>
+    <%- partial('_partial/section-header', { title: page.category, description: page.posts.length + ' posts' }) %>
+    <div class="chronicle-list">
+      <% page.posts.sort('-date').forEach(function(post) { %>
+        <%- partial('_partial/post-card', { item: post }) %>
+      <% }) %>
+    </div>
+    <%- partial('_partial/pagination') %>
+  <% } else { %>
+    <%- partial('_partial/section-header', { title: 'Categories', description: '' }) %>
+    <div class="category-list">
+      <% site.categories.forEach(function(cat) { %>
+        <a class="category-list__item" href="<%- url_for(cat.path) %>">
+          <span class="category-list__name"><%= cat.name %></span>
+          <span class="category-list__count"><%= cat.length %></span>
+        </a>
+      <% }) %>
+    </div>
+  <% } %>
+</section>

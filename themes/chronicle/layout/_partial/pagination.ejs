@@ -1,0 +1,15 @@
+<% if (page.total > 1) { %>
+<nav class="pagination">
+  <% if (page.prev) { %>
+    <a class="pagination__link pagination__prev" href="<%- url_for(page.prev_link) %>">&larr; Newer</a>
+  <% } else { %>
+    <span class="pagination__link pagination__prev pagination__disabled">&larr; Newer</span>
+  <% } %>
+  <span class="pagination__info"><%= page.current %> / <%= page.total %></span>
+  <% if (page.next) { %>
+    <a class="pagination__link pagination__next" href="<%- url_for(page.next_link) %>">Older &rarr;</a>
+  <% } else { %>
+    <span class="pagination__link pagination__next pagination__disabled">Older &rarr;</span>
+  <% } %>
+</nav>
+<% } %>

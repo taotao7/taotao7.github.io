@@ -1,0 +1,20 @@
+<article class="post-card">
+  <time class="post-card__date" datetime="<%= date(item.date, 'YYYY-MM-DD') %>">
+    <%= date(item.date, 'MMM DD') %>
+  </time>
+  <div class="post-card__body">
+    <h3 class="post-card__title">
+      <a href="<%- url_for(item.path) %>"><%= item.title %></a>
+    </h3>
+    <% if (item.excerpt) { %>
+      <p class="post-card__excerpt"><%- strip_html(item.excerpt).substring(0, 120) %></p>
+    <% } %>
+    <div class="post-card__meta">
+      <% if (item.tags && item.tags.length) { %>
+        <% item.tags.forEach(function(tag) { %>
+          <a class="tag-pill" href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,18 @@
+<article class="featured-item">
+  <div class="featured-item__label">Featured</div>
+  <h2 class="featured-item__title">
+    <a href="<%- url_for(item.path) %>"><%= item.title %></a>
+  </h2>
+  <% if (item.excerpt) { %>
+    <p class="featured-item__excerpt"><%- strip_html(item.excerpt).substring(0, 200) %></p>
+  <% } %>
+  <div class="featured-item__meta">
+    <time datetime="<%= date(item.date, 'YYYY-MM-DD') %>"><%= date(item.date, 'YYYY-MM-DD') %></time>
+    <% if (item.tags && item.tags.length) { %>
+      <span class="featured-item__sep">&middot;</span>
+      <% item.tags.forEach(function(tag) { %>
+        <a class="tag-pill" href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+      <% }) %>
+    <% } %>
+  </div>
+</article>

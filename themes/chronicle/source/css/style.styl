@@ -1,0 +1,737 @@
+// Chronicle Theme — Design Tokens & Styles
+
+// ─── @font-face ──────────────────────────────────────
+@font-face
+  font-family 'Iosevka Mono'
+  src url('/fonts/IoskeleyMono-Regular.ttf') format('truetype')
+  font-weight 400
+  font-style normal
+  font-display swap
+
+// ─── Tokens ───────────────────────────────────────────
+$bg            = #141414
+$bg-elevated   = #1c1c1c
+$text          = #e8e4df
+$text-muted    = #8a8580
+$text-dim      = #5a5550
+$line          = rgba(255, 255, 255, 0.08)
+$line-strong   = rgba(255, 255, 255, 0.15)
+$accent        = #D4883A
+$accent-hover  = #e09a4a
+
+// Typography — use Iosevka Mono as primary across all stacks
+$font-serif    = 'Iosevka Mono', 'Georgia', 'Noto Serif', serif
+$font-sans     = 'Iosevka Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif
+$font-mono     = 'Iosevka Mono', 'Fira Code', 'SF Mono', Consolas, monospace
+
+$fs-xs   = 0.75rem
+$fs-sm   = 0.8125rem
+$fs-base = 1rem
+$fs-md   = 1.125rem
+$fs-lg   = 1.375rem
+$fs-xl   = 1.75rem
+$fs-2xl  = 2.25rem
+$fs-3xl  = 2.75rem
+
+$lh-tight  = 1.3
+$lh-normal = 1.7
+$lh-loose  = 1.85
+
+// Spacing
+$sp-xs  = 4px
+$sp-sm  = 8px
+$sp-md  = 16px
+$sp-lg  = 24px
+$sp-xl  = 40px
+$sp-2xl = 64px
+$sp-3xl = 96px
+
+$max-width = 980px
+$radius    = 2px
+
+// ─── Reset & Base ─────────────────────────────────────
+*
+*::before
+*::after
+  box-sizing border-box
+  margin 0
+  padding 0
+
+html
+  font-size 16px
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  scroll-behavior smooth
+
+body
+  font-family $font-sans
+  font-size $fs-base
+  line-height $lh-normal
+  color $text
+  background $bg
+
+a
+  color $accent
+  text-decoration none
+  transition color 0.15s ease
+  &:hover
+    color $accent-hover
+
+img
+  max-width 100%
+  height auto
+
+// ─── Container ────────────────────────────────────────
+.container
+  max-width $max-width
+  margin 0 auto
+  padding 0 $sp-lg
+
+// ─── Header ───────────────────────────────────────────
+.header
+  position sticky
+  top 0
+  z-index 100
+  background rgba(20, 20, 20, 0.92)
+  backdrop-filter blur(8px)
+  border-bottom 1px solid $line
+
+.header__inner
+  display flex
+  align-items center
+  justify-content space-between
+  height 56px
+
+.header__logo
+  font-family $font-serif
+  font-size $fs-lg
+  font-weight 700
+  color $text
+  letter-spacing -0.02em
+  &:hover
+    color $accent
+
+.header__nav
+  display flex
+  gap $sp-lg
+
+.header__link
+  font-size $fs-sm
+  color $text-muted
+  text-transform uppercase
+  letter-spacing 0.08em
+  transition color 0.15s ease
+  &:hover
+    color $text
+
+.header__toggle
+  display none
+  background none
+  border none
+  cursor pointer
+  flex-direction column
+  gap 4px
+  padding 4px
+  span
+    display block
+    width 20px
+    height 1.5px
+    background $text-muted
+    transition all 0.2s ease
+
+// ─── Main ─────────────────────────────────────────────
+.main
+  min-height calc(100vh - 56px - 80px)
+  padding-top $sp-2xl
+  padding-bottom $sp-3xl
+
+// ─── Section Header ──────────────────────────────────
+.section
+  margin-bottom $sp-2xl
+
+.section-header
+  margin-bottom $sp-xl
+
+.section-header__title
+  font-family $font-serif
+  font-size $fs-xl
+  font-weight 700
+  color $text
+  letter-spacing -0.02em
+
+.section-header__desc
+  font-size $fs-sm
+  color $text-muted
+  margin-top $sp-xs
+
+.section-header__line
+  margin-top $sp-md
+  border-bottom 1px solid $line
+
+// ─── Featured Item ───────────────────────────────────
+.featured-list
+  display grid
+  gap 1px
+  background $line
+  border 1px solid $line
+  border-radius $radius
+
+.featured-item
+  padding $sp-lg
+  background $bg
+
+.featured-item__label
+  font-size $fs-xs
+  text-transform uppercase
+  letter-spacing 0.1em
+  color $accent
+  margin-bottom $sp-sm
+
+.featured-item__title
+  font-family $font-serif
+  font-size $fs-xl
+  font-weight 700
+  line-height $lh-tight
+  a
+    color $text
+    &:hover
+      color $accent
+
+.featured-item__excerpt
+  font-size $fs-base
+  color $text-muted
+  line-height $lh-normal
+  margin-top $sp-sm
+
+.featured-item__meta
+  display flex
+  align-items center
+  gap $sp-sm
+  margin-top $sp-md
+  font-size $fs-sm
+  color $text-dim
+
+.featured-item__sep
+  color $text-dim
+
+// ─── Chronicle / Timeline ────────────────────────────
+.chronicle-list
+  // no extra styles needed
+
+.chronicle-month
+  margin-bottom $sp-xl
+
+.chronicle-month__label
+  font-family $font-mono
+  font-size $fs-sm
+  color $text-dim
+  text-transform uppercase
+  letter-spacing 0.1em
+  padding-bottom $sp-sm
+  border-bottom 1px solid $line
+  margin-bottom $sp-md
+
+.chronicle-month__posts
+  display flex
+  flex-direction column
+
+// ─── Post Card (Timeline Item) ───────────────────────
+.post-card
+  display flex
+  gap $sp-lg
+  padding $sp-md 0
+  border-bottom 1px solid $line
+  &:last-child
+    border-bottom none
+
+.post-card__date
+  flex-shrink 0
+  width 60px
+  font-family $font-mono
+  font-size $fs-sm
+  color $text-dim
+  padding-top 2px
+
+.post-card__body
+  flex 1
+  min-width 0
+
+.post-card__title
+  font-family $font-serif
+  font-size $fs-md
+  font-weight 600
+  line-height $lh-tight
+  a
+    color $text
+    &:hover
+      color $accent
+
+.post-card__excerpt
+  font-size $fs-sm
+  color $text-muted
+  line-height $lh-normal
+  margin-top $sp-xs
+  overflow hidden
+  text-overflow ellipsis
+  display -webkit-box
+  -webkit-line-clamp 2
+  -webkit-box-orient vertical
+
+.post-card__meta
+  display flex
+  gap $sp-sm
+  margin-top $sp-sm
+
+// ─── Tag Pill ────────────────────────────────────────
+.tag-pill
+  display inline-block
+  font-size $fs-xs
+  color $text-muted
+  border 1px solid $line-strong
+  border-radius $radius
+  padding 1px 8px
+  transition all 0.15s ease
+  &:hover
+    color $accent
+    border-color $accent
+
+// ─── Typed Sections ──────────────────────────────────
+.section--typed
+  .typed-list
+    display flex
+    flex-direction column
+
+// ─── Post (Article Page) ─────────────────────────────
+.post__header
+  margin-bottom $sp-xl
+  padding-bottom $sp-lg
+  border-bottom 1px solid $line
+
+.post__title
+  font-family $font-serif
+  font-size $fs-2xl
+  font-weight 700
+  line-height $lh-tight
+  letter-spacing -0.02em
+  color $text
+
+.post__meta
+  display flex
+  align-items center
+  gap $sp-sm
+  margin-top $sp-md
+  font-size $fs-sm
+  color $text-muted
+
+.post__sep
+  color $text-dim
+
+.post__reading-time
+  color $text-dim
+
+.post__category
+  color $text-muted
+  &:hover
+    color $accent
+
+.post__tags
+  display flex
+  flex-wrap wrap
+  gap $sp-sm
+  margin-top $sp-md
+
+// ─── Post Layout (with TOC) ─────────────────────────
+.post__layout
+  position relative
+
+// ─── Post Content ────────────────────────────────────
+.post__content
+  font-size $fs-md
+  line-height $lh-loose
+  color $text
+
+  h1, h2, h3, h4, h5, h6
+    font-family $font-serif
+    font-weight 700
+    color $text
+    letter-spacing -0.01em
+    margin-top 2em
+    margin-bottom 0.75em
+    line-height $lh-tight
+
+  h1
+    font-size $fs-2xl
+  h2
+    font-size $fs-xl
+    padding-bottom $sp-sm
+    border-bottom 1px solid $line
+  h3
+    font-size $fs-lg
+  h4
+    font-size $fs-md
+
+  p
+    margin-bottom 1.25em
+
+  ul, ol
+    padding-left 1.5em
+    margin-bottom 1.25em
+    li
+      margin-bottom 0.4em
+
+  blockquote
+    border-left 3px solid $accent
+    padding $sp-md $sp-lg
+    margin 1.5em 0
+    background $bg-elevated
+    border-radius 0 $radius $radius 0
+    color $text-muted
+    p
+      margin-bottom 0
+
+  a
+    color $accent
+    text-decoration underline
+    text-decoration-color rgba(212, 136, 58, 0.3)
+    text-underline-offset 2px
+    &:hover
+      text-decoration-color $accent
+
+  code
+    font-family $font-mono
+    font-size 0.875em
+    background $bg-elevated
+    border 1px solid $line
+    border-radius $radius
+    padding 1px 5px
+
+  pre
+    margin 1.5em 0
+    padding $sp-lg
+    background $bg-elevated
+    border 1px solid $line
+    border-radius $radius
+    overflow-x auto
+    code
+      background none
+      border none
+      padding 0
+      font-size 0.875rem
+      line-height 1.6
+
+  table
+    width 100%
+    border-collapse collapse
+    margin 1.5em 0
+    font-size $fs-sm
+    th, td
+      padding $sp-sm $sp-md
+      border-bottom 1px solid $line
+      text-align left
+    th
+      color $text-muted
+      font-weight 600
+      text-transform uppercase
+      letter-spacing 0.05em
+      font-size $fs-xs
+    tr:hover td
+      background $bg-elevated
+
+  hr
+    border none
+    border-top 1px solid $line
+    margin 2em 0
+
+  img
+    border-radius $radius
+    margin 1.5em 0
+
+// ─── TOC ─────────────────────────────────────────────
+.toc-wrap
+  margin-bottom $sp-xl
+
+.toc-toggle
+  background none
+  border 1px solid $line-strong
+  border-radius $radius
+  color $text-muted
+  font-family $font-mono
+  font-size $fs-sm
+  padding $sp-xs $sp-md
+  cursor pointer
+  transition all 0.15s ease
+  &:hover
+    color $text
+    border-color $accent
+
+.toc
+  margin-top $sp-md
+  padding-left $sp-md
+  border-left 1px solid $line
+  display none
+  &.is-open
+    display block
+  ol
+    list-style none
+    padding-left $sp-md
+  a
+    display block
+    font-size $fs-sm
+    color $text-muted
+    padding 3px 0
+    &:hover
+      color $accent
+
+// ─── Post Footer ─────────────────────────────────────
+.post__footer
+  margin-top $sp-2xl
+
+.post__copyright
+  padding $sp-lg
+  border 1px solid $line
+  border-radius $radius
+  font-size $fs-sm
+  color $text-muted
+  line-height 1.8
+  a
+    color $accent
+
+// ─── Post Nav ────────────────────────────────────────
+.post-nav
+  display flex
+  justify-content space-between
+  gap $sp-lg
+  margin-top $sp-xl
+  padding-top $sp-xl
+  border-top 1px solid $line
+
+.post-nav__link
+  flex 1
+  min-width 0
+
+.post-nav__prev
+  text-align left
+
+.post-nav__next
+  text-align right
+
+.post-nav__label
+  display block
+  font-size $fs-xs
+  color $text-dim
+  text-transform uppercase
+  letter-spacing 0.08em
+  margin-bottom $sp-xs
+
+.post-nav__title
+  display block
+  font-size $fs-base
+  color $text
+  transition color 0.15s ease
+
+a.post-nav__link:hover .post-nav__title
+  color $accent
+
+// ─── Archive ─────────────────────────────────────────
+.archive-list
+  // container
+
+.archive-year
+  margin-bottom $sp-xl
+
+.archive-year__label
+  font-family $font-serif
+  font-size $fs-xl
+  font-weight 700
+  color $text
+  margin-bottom $sp-md
+
+.archive-year__posts
+  display flex
+  flex-direction column
+
+.archive-item
+  display flex
+  gap $sp-lg
+  padding $sp-sm 0
+  border-bottom 1px solid $line
+  &:last-child
+    border-bottom none
+
+.archive-item__date
+  flex-shrink 0
+  width 56px
+  font-family $font-mono
+  font-size $fs-sm
+  color $text-dim
+
+.archive-item__title
+  font-size $fs-base
+  color $text
+  &:hover
+    color $accent
+
+// ─── Taxonomy (Tags / Categories) ───────────────────
+.tag-cloud
+  display flex
+  flex-wrap wrap
+  gap $sp-sm
+
+.tag-cloud__item
+  display inline-flex
+  align-items center
+  gap $sp-xs
+  padding $sp-xs $sp-md
+  border 1px solid $line-strong
+  border-radius $radius
+  font-size $fs-sm
+  color $text-muted
+  transition all 0.15s ease
+  &:hover
+    color $accent
+    border-color $accent
+
+.tag-cloud__count
+  font-size $fs-xs
+  color $text-dim
+
+.category-list
+  display flex
+  flex-direction column
+
+.category-list__item
+  display flex
+  justify-content space-between
+  align-items center
+  padding $sp-md 0
+  border-bottom 1px solid $line
+  color $text
+  font-size $fs-base
+  transition color 0.15s ease
+  &:hover
+    color $accent
+  &:last-child
+    border-bottom none
+
+.category-list__count
+  font-size $fs-sm
+  color $text-dim
+
+// ─── Pagination ──────────────────────────────────────
+.pagination
+  display flex
+  justify-content center
+  align-items center
+  gap $sp-lg
+  margin-top $sp-2xl
+  padding-top $sp-xl
+  border-top 1px solid $line
+
+.pagination__link
+  font-size $fs-sm
+  color $text-muted
+  transition color 0.15s ease
+  &:hover
+    color $accent
+
+.pagination__disabled
+  color $text-dim
+  pointer-events none
+
+.pagination__info
+  font-family $font-mono
+  font-size $fs-sm
+  color $text-dim
+
+// ─── Footer ─────────────────────────────────────────
+.footer
+  border-top 1px solid $line
+  padding $sp-xl 0
+
+.footer__inner
+  display flex
+  justify-content space-between
+  align-items center
+  font-size $fs-sm
+  color $text-dim
+
+.footer__sep
+  margin 0 $sp-sm
+
+.footer__right
+  display flex
+  gap $sp-md
+
+.footer__social
+  color $text-muted
+  &:hover
+    color $accent
+
+// ─── Back to Top ─────────────────────────────────────
+.back-to-top
+  position fixed
+  bottom $sp-xl
+  right $sp-xl
+  width 36px
+  height 36px
+  display flex
+  align-items center
+  justify-content center
+  border 1px solid $line-strong
+  border-radius $radius
+  background rgba(20, 20, 20, 0.9)
+  color $text-muted
+  font-size $fs-sm
+  cursor pointer
+  opacity 0
+  visibility hidden
+  transition all 0.2s ease
+  &.is-visible
+    opacity 1
+    visibility visible
+  &:hover
+    color $accent
+    border-color $accent
+
+// ─── Responsive ──────────────────────────────────────
+@media (max-width: 768px)
+  .container
+    padding 0 $sp-md
+
+  .header__nav
+    display none
+    position absolute
+    top 56px
+    left 0
+    right 0
+    background $bg
+    border-bottom 1px solid $line
+    flex-direction column
+    padding $sp-md $sp-lg
+    gap $sp-md
+    &.is-open
+      display flex
+
+  .header__toggle
+    display flex
+
+  .post__title
+    font-size $fs-xl
+
+  .post-card
+    flex-direction column
+    gap $sp-xs
+
+  .post-card__date
+    width auto
+
+  .featured-item__title
+    font-size $fs-lg
+
+  .post-nav
+    flex-direction column
+
+  .footer__inner
+    flex-direction column
+    gap $sp-md
+    text-align center

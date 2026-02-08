@@ -1,0 +1,32 @@
+<section class="archive">
+  <%- partial('_partial/section-header', { title: page.year ? page.year + (page.month ? '-' + (page.month < 10 ? '0' + page.month : page.month) : '') : 'Archives', description: '' }) %>
+  
+  <%
+    var posts = page.posts.sort('-date');
+    var yearGroups = {};
+    posts.forEach(function(post) {
+      var y = date(post.date, 'YYYY');
+      if (!yearGroups[y]) yearGroups[y] = [];
+      yearGroups[y].push(post);
+    });
+    var years = Object.keys(yearGroups).sort().reverse();
+  %>
+  
+  <div class="archive-list">
+    <% years.forEach(function(year) { %>
+    <div class="archive-year">
+      <h2 class="archive-year__label"><%= year %></h2>
+      <div class="archive-year__posts">
+        <% yearGroups[year].forEach(function(post) { %>
+        <article class="archive-item">
+          <time class="archive-item__date" datetime="<%= date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'MM-DD') %></time>
+          <a class="archive-item__title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </article>
+        <% }) %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  
+  <%- partial('_partial/pagination') %>
+</section>

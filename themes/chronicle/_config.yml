@@ -1,0 +1,51 @@
+# Chronicle Theme Configuration
+
+# Navigation
+nav:
+  Home: /
+  Archives: /archives/
+  Tags: /tags/
+  Project: /project/
+  About: /about/
+
+# Accent color (amber/warm orange)
+accent_color: "#D4883A"
+
+# Featured posts
+featured_count: 2
+
+# Sections on homepage (maps to post front-matter `type` field)
+sections:
+  notes:
+    title: "Notes"
+    description: "Short observations & quick references"
+    type: "note"
+  guides:
+    title: "Guides"
+    description: "In-depth tutorials & walkthroughs"
+    type: "guide"
+  videos:
+    title: "Videos"
+    description: "Video content & screencasts"
+    type: "video"
+
+# Social links
+social:
+  github: ""
+  twitter: ""
+  email: ""
+
+# Post page
+toc: true
+reading_time: true
+post_nav: true
+copyright: true
+
+# RSS
+rss: /atom.xml
+
+# Code highlight (uses Hexo built-in)
+highlight_theme: "dark"
+
+# Posts per page for chronicle list
+chronicle_per_page: 20
