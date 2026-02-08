@@ -4,9 +4,9 @@
 
 # Site
 title: tao's blog
-subtitle: "前端，后端，nodejs"
-description: "技术blog"
-keywords: 'nodejs c# js ts python'
+subtitle: "Frontend, Backend, Node.js"
+description: "Tech Blog"
+keywords: "nodejs c# js ts python"
 author: tao
 language: en
 timezone: "Asia/Shanghai"
@@ -50,7 +50,7 @@ highlight:
   auto_detect: false
   tab_replace: ""
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -115,7 +115,7 @@ deploy:
   type: git
   repo: https://github.com/taotao7/taotao7.github.io.git
   branch: gh-pages
-  messge: 更新blog
+  messge: Update blog
 
 live2d:
   enable: true

@@ -1,0 +1,116 @@
+// Analog Dream: Magnetic Night Theme
+// Based on user provided configuration
+
+$hl-bg = #1a1d21
+$hl-comment = #6272a4
+$hl-red = #ff5555
+$hl-orange = #ffb86c
+$hl-yellow = #ffb86c
+$hl-green = #50fa7b
+$hl-cyan = #8be9fd
+$hl-blue = #8be9fd
+$hl-purple = #bd93f9
+$hl-fg = #d4d4d4
+
+.highlight
+  margin 1.5em 0
+  background $hl-bg
+  border-radius 2px
+  overflow-x auto
+  border 1px solid rgba(255, 255, 255, 0.05)
+  
+  // Override global table styles
+  table
+    margin 0 !important
+    width auto !important
+    border none !important
+    border-collapse collapse !important
+    
+    td, th
+      border none !important
+      padding 0 !important
+  
+  // Line numbers column
+  .gutter
+    padding 0 12px !important
+    text-align right
+    color $hl-comment
+    border-right 1px solid rgba(255, 255, 255, 0.1) !important
+    background darken($hl-bg, 5%) !important
+    user-select none
+    
+    pre
+      padding 0 !important
+      margin 0 !important
+      background none !important
+      border none !important
+      font-family 'Ioskeley Mono', monospace !important
+      font-size 0.875rem !important
+      color $hl-comment !important
+
+  // Code column
+  .code
+    padding 0 12px !important
+    background $hl-bg !important
+    width 100%
+    
+    pre
+      padding 0 !important
+      margin 0 !important
+      background none !important
+      border none !important
+      font-family 'Ioskeley Mono', monospace !important
+      font-size 0.875rem !important
+      color $hl-fg !important
+
+// Common code block styles (for non-highlighted code blocks too)
+code
+  font-family 'Ioskeley Mono', monospace
+  
+// Color Mappings (Support both .hljs-* and standard classes)
+
+// Comments
+.hljs-comment, .hljs-quote, .comment, .quote
+  color $hl-comment
+  font-style italic
+
+// Keywords
+.hljs-doctag, .hljs-keyword, .hljs-formula, .keyword, .function .keyword
+  color $hl-purple
+
+// Functions / Methods
+.hljs-function, .hljs-title, .title, .function .title
+  color $hl-blue
+
+// Class / Built-in
+.hljs-built_in, .hljs-class .hljs-title, .built_in, .class .title
+  color $hl-yellow
+
+// Variables / Attributes
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number, .attr, .variable, .attribute, .number
+  color $hl-orange
+
+// Strings
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string, .string, .regexp
+  color $hl-green
+
+// Tags
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst, .tag .name, .selector-tag
+  color $hl-red
+
+// Literal
+.hljs-literal, .literal
+  color $hl-cyan
+
+// Symbols
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .symbol, .bullet
+  color $hl-blue
+
+.hljs-emphasis, .emphasis
+  font-style italic
+
+.hljs-strong, .strong
+  font-weight bold
+
+.hljs-link
+  text-decoration underline

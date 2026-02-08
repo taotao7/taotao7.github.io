@@ -2,7 +2,7 @@
 
 // ─── @font-face ──────────────────────────────────────
 @font-face
-  font-family 'Iosevka Mono'
+  font-family 'Ioskeley Mono'
   src url('/fonts/IoskeleyMono-Regular.ttf') format('truetype')
   font-weight 400
   font-style normal
@@ -19,10 +19,10 @@ $line-strong   = rgba(255, 255, 255, 0.15)
 $accent        = #D4883A
 $accent-hover  = #e09a4a
 
-// Typography — use Iosevka Mono as primary across all stacks
-$font-serif    = 'Iosevka Mono', 'Georgia', 'Noto Serif', serif
-$font-sans     = 'Iosevka Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif
-$font-mono     = 'Iosevka Mono', 'Fira Code', 'SF Mono', Consolas, monospace
+// Typography
+$font-serif    = 'Playfair Display', 'Merriweather', 'Georgia', serif
+$font-sans     = 'Ioskeley Mono', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif
+$font-mono     = 'Ioskeley Mono', 'Fira Code', 'SF Mono', Consolas, monospace
 
 $fs-xs   = 0.75rem
 $fs-sm   = 0.8125rem
@@ -42,11 +42,11 @@ $sp-xs  = 4px
 $sp-sm  = 8px
 $sp-md  = 16px
 $sp-lg  = 24px
-$sp-xl  = 40px
-$sp-2xl = 64px
+$sp-xl  = 48px
+$sp-2xl = 72px
 $sp-3xl = 96px
 
-$max-width = 980px
+$max-width = 1040px
 $radius    = 2px
 
 // ─── Reset & Base ─────────────────────────────────────
@@ -295,6 +295,38 @@ img
     color $accent
     border-color $accent
 
+// ─── Tag Cloud ────────────────────────────────────────
+.tag-cloud
+  display flex
+  flex-wrap wrap
+  gap $sp-sm
+  margin-top $sp-md
+
+.tag-cloud__item
+  display inline-flex
+  align-items center
+  gap 6px
+  padding 4px 10px
+  background none
+  border 1px solid $line-strong
+  border-radius $radius
+  font-size $fs-sm
+  color $text-muted
+  transition all 0.15s ease
+  &:hover
+    color $accent
+    border-color $accent
+
+.tag-cloud__name
+  font-family $font-mono
+
+.tag-cloud__count
+  font-size $fs-xs
+  color $text-dim
+  background rgba(255, 255, 255, 0.05)
+  padding 0 4px
+  border-radius 2px
+
 // ─── Typed Sections ──────────────────────────────────
 .section--typed
   .typed-list
@@ -346,7 +378,7 @@ img
 
 // ─── Post Content ────────────────────────────────────
 .post__content
-  font-size $fs-md
+  font-size $fs-base
   line-height $lh-loose
   color $text
 
@@ -405,6 +437,7 @@ img
     border-radius $radius
     padding 1px 5px
 
+  // Generic pre style (fallback if not highlighted)
   pre
     margin 1.5em 0
     padding $sp-lg
@@ -419,6 +452,7 @@ img
       font-size 0.875rem
       line-height 1.6
 
+  // Generic Table style
   table
     width 100%
     border-collapse collapse
@@ -500,214 +534,62 @@ img
 .post-nav
   display flex
   justify-content space-between
-  gap $sp-lg
   margin-top $sp-xl
   padding-top $sp-xl
   border-top 1px solid $line
 
-.post-nav__link
-  flex 1
-  min-width 0
-
-.post-nav__prev
-  text-align left
-
-.post-nav__next
-  text-align right
+.post-nav__item
+  max-width 45%
 
 .post-nav__label
-  display block
   font-size $fs-xs
   color $text-dim
   text-transform uppercase
-  letter-spacing 0.08em
   margin-bottom $sp-xs
 
 .post-nav__title
-  display block
-  font-size $fs-base
-  color $text
-  transition color 0.15s ease
-
-a.post-nav__link:hover .post-nav__title
-  color $accent
-
-// ─── Archive ─────────────────────────────────────────
-.archive-list
-  // container
-
-.archive-year
-  margin-bottom $sp-xl
-
-.archive-year__label
   font-family $font-serif
-  font-size $fs-xl
-  font-weight 700
-  color $text
-  margin-bottom $sp-md
+  font-size $fs-md
+  font-weight 600
+  a
+    color $text
+    &:hover
+      color $accent
 
-.archive-year__posts
-  display flex
-  flex-direction column
-
-.archive-item
-  display flex
-  gap $sp-lg
-  padding $sp-sm 0
-  border-bottom 1px solid $line
-  &:last-child
-    border-bottom none
-
-.archive-item__date
-  flex-shrink 0
-  width 56px
-  font-family $font-mono
-  font-size $fs-sm
-  color $text-dim
-
-.archive-item__title
-  font-size $fs-base
-  color $text
-  &:hover
-    color $accent
-
-// ─── Taxonomy (Tags / Categories) ───────────────────
-.tag-cloud
-  display flex
-  flex-wrap wrap
-  gap $sp-sm
-
-.tag-cloud__item
-  display inline-flex
-  align-items center
-  gap $sp-xs
-  padding $sp-xs $sp-md
-  border 1px solid $line-strong
-  border-radius $radius
-  font-size $fs-sm
-  color $text-muted
-  transition all 0.15s ease
-  &:hover
-    color $accent
-    border-color $accent
-
-.tag-cloud__count
-  font-size $fs-xs
-  color $text-dim
-
-.category-list
-  display flex
-  flex-direction column
-
-.category-list__item
-  display flex
-  justify-content space-between
-  align-items center
-  padding $sp-md 0
-  border-bottom 1px solid $line
-  color $text
-  font-size $fs-base
-  transition color 0.15s ease
-  &:hover
-    color $accent
-  &:last-child
-    border-bottom none
-
-.category-list__count
-  font-size $fs-sm
-  color $text-dim
-
-// ─── Pagination ──────────────────────────────────────
-.pagination
-  display flex
-  justify-content center
-  align-items center
-  gap $sp-lg
-  margin-top $sp-2xl
-  padding-top $sp-xl
-  border-top 1px solid $line
-
-.pagination__link
-  font-size $fs-sm
-  color $text-muted
-  transition color 0.15s ease
-  &:hover
-    color $accent
-
-.pagination__disabled
-  color $text-dim
-  pointer-events none
-
-.pagination__info
-  font-family $font-mono
-  font-size $fs-sm
-  color $text-dim
-
-// ─── Footer ─────────────────────────────────────────
+// ─── Footer ──────────────────────────────────────────
 .footer
-  border-top 1px solid $line
+  margin-top $sp-3xl
   padding $sp-xl 0
-
-.footer__inner
-  display flex
-  justify-content space-between
-  align-items center
+  border-top 1px solid $line
+  text-align center
   font-size $fs-sm
-  color $text-dim
-
-.footer__sep
-  margin 0 $sp-sm
-
-.footer__right
-  display flex
-  gap $sp-md
+  color $text-muted
 
 .footer__social
-  color $text-muted
-  &:hover
-    color $accent
-
-// ─── Back to Top ─────────────────────────────────────
-.back-to-top
-  position fixed
-  bottom $sp-xl
-  right $sp-xl
-  width 36px
-  height 36px
   display flex
-  align-items center
   justify-content center
-  border 1px solid $line-strong
-  border-radius $radius
-  background rgba(20, 20, 20, 0.9)
-  color $text-muted
-  font-size $fs-sm
-  cursor pointer
-  opacity 0
-  visibility hidden
-  transition all 0.2s ease
-  &.is-visible
-    opacity 1
-    visibility visible
-  &:hover
-    color $accent
-    border-color $accent
+  gap $sp-lg
+  margin-bottom $sp-lg
+  a
+    color $text-muted
+    &:hover
+      color $accent
 
 // ─── Responsive ──────────────────────────────────────
 @media (max-width: 768px)
-  .container
-    padding 0 $sp-md
+  .header__inner
+    height 50px
 
   .header__nav
     display none
     position absolute
-    top 56px
+    top 100%
     left 0
     right 0
-    background $bg
+    background $bg-elevated
     border-bottom 1px solid $line
     flex-direction column
-    padding $sp-md $sp-lg
+    padding $sp-lg
     gap $sp-md
     &.is-open
       display flex
@@ -715,23 +597,25 @@ a.post-nav__link:hover .post-nav__title
   .header__toggle
     display flex
 
+  .section-header__title
+    font-size $fs-lg
+
   .post__title
     font-size $fs-xl
 
   .post-card
     flex-direction column
-    gap $sp-xs
+    gap $sp-sm
 
   .post-card__date
     width auto
 
-  .featured-item__title
-    font-size $fs-lg
-
   .post-nav
     flex-direction column
+    gap $sp-lg
 
-  .footer__inner
-    flex-direction column
-    gap $sp-md
+  .post-nav__item
+    max-width 100%
     text-align center
+
+@import "highlight"
