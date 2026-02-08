@@ -28,7 +28,7 @@ Here is what you can query:
 
 ## Getting Started
 
-Add `x-rapidapi-host` and `x-rapidapi-key` to your request headers. Get your key at [RapidAPI](https://rapidapi.com).
+Add `x-rapidapi-host` and `x-rapidapi-key` to your request headers. Get your key at [RapidAPI](https://rapidapi.com/mocatao7/api/unofficial-medium-api-wrapper).
 
 ### Code Examples
 
