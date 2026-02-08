@@ -1,6 +1,6 @@
 <header class="header" id="header">
   <div class="container header__inner">
-    <a class="header__logo" href="<%- url_for('/') %>">
+    <a class="header__logo" href="<%- url_for('/') %>" aria-label="<%= config.title %>">
       <%= config.title %>
     </a>
     <button class="header__toggle" id="nav-toggle" aria-label="Toggle navigation">
