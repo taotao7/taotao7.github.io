@@ -42,7 +42,7 @@
     <link href="https://taotao7.top/2022/08/18/algorithm-sorting/"/>
     <id>https://taotao7.top/2022/08/18/algorithm-sorting/</id>
     <published>2022-08-18T09:33:45.000Z</published>
-    <updated>2026-02-09T03:13:24.521Z</updated>
+    <updated>2026-02-09T05:39:35.810Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><p>I’ve felt a bit stuck recently—my growth rate has slowed down. It’s time to reinforce the fundamentals: Data Structures and Algorithms.</p><p>The last two years flew by, but knowledge accumulation hasn’t kept pace. I need to pivot slightly and solidify my engineering foundation.</p><p>Starting today with Sorting.</p><h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><ul><li><strong>Average Case</strong>: O(n log n)</li><li><strong>Worst Case</strong>: O(n²)</li></ul><p><img src="1.png" alt="Quick Sort"></p>]]></content>
     
@@ -169,31 +169,6 @@
   </entry>
   
   <entry>
-    <title>New Blog</title>
-    <link href="https://taotao7.top/2020/12/05/new-blog/"/>
-    <id>https://taotao7.top/2020/12/05/new-blog/</id>
-    <published>2020-12-04T16:00:00.000Z</published>
-    <updated>2026-02-09T03:13:24.522Z</updated>
-    
-    <content type="html"><![CDATA[<p>I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Journal" scheme="https://taotao7.top/tags/Journal/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Koa-JWT Usage and Common Issues</title>
     <link href="https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/"/>
     <id>https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/</id>
@@ -218,6 +193,31 @@
       <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
     
       <category term="JWT" scheme="https://taotao7.top/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>New Blog</title>
+    <link href="https://taotao7.top/2020/12/05/new-blog/"/>
+    <id>https://taotao7.top/2020/12/05/new-blog/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Journal" scheme="https://taotao7.top/tags/Journal/"/>
     
   </entry>
   

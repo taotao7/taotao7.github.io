@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://taotao7.top/2022/08/18/algorithm-sorting/</loc>
+    
+    <lastmod>2026-02-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taotao7.top/2020/12/07/axios-download-button/</loc>
     
     <lastmod>2026-02-09</lastmod>
@@ -48,15 +57,6 @@
   
   <url>
     <loc>https://taotao7.top/2020/12/05/new-blog/</loc>
-    
-    <lastmod>2026-02-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taotao7.top/2022/08/18/algorithm-sorting/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -187,14 +187,14 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/tags/Journal/</loc>
+    <loc>https://taotao7.top/tags/JWT/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/tags/JWT/</loc>
+    <loc>https://taotao7.top/tags/Journal/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

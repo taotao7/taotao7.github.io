@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://taotao7.top/zh-CN/2020/12/06/koa-captcha-svg-captcha/</loc>
+    
+    <lastmod>2026-02-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taotao7.top/zh-CN/2020/12/05/koa-jwt-usage-and-issues/</loc>
     
     <lastmod>2026-02-09</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://taotao7.top/zh-CN/2020/12/05/new-blog/</loc>
-    
-    <lastmod>2026-02-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/06/koa-captcha-svg-captcha/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -187,14 +187,14 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Journal/</loc>
+    <loc>https://taotao7.top/zh-CN/tags/JWT/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/JWT/</loc>
+    <loc>https://taotao7.top/zh-CN/tags/Journal/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
