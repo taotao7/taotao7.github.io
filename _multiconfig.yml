@@ -5,7 +5,7 @@ keywords: nodejs c# js ts python
 author: tao
 language: zh-CN
 timezone: Asia/Shanghai
-url: 'https://taotao7.top'
+url: 'https://taotao7.top/zh-CN'
 root: /zh-CN/
 permalink: ':year/:month/:day/:slug/'
 permalink_defaults: null

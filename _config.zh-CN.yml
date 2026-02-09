@@ -1,5 +1,8 @@
 language: zh-CN
+url: https://taotao7.top/zh-CN
 root: /zh-CN/
 public_dir: public/zh-CN
 exclude:
   - "**/*.en.md"
+sitemap:
+  path: sitemap.xml

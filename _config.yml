@@ -103,7 +103,7 @@ ignore:
 theme: chronicle
 
 sitemap:
-  path: sitemap.xml
+  path: sitemap-en.xml
 baidusitemap:
   path: baidusitemap.xml
 feed:
