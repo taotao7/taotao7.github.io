@@ -5,9 +5,9 @@
   <subtitle>Frontend, Backend, Node.js</subtitle>
   <link href="/zh-CN/atom.xml" rel="self"/>
   
-  <link href="https://taotao7.top/"/>
+  <link href="https://taotao7.top/zh-CN/"/>
   <updated>2026-02-09T02:59:42.239Z</updated>
-  <id>https://taotao7.top/</id>
+  <id>https://taotao7.top/zh-CN/</id>
   
   <author>
     <name>tao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Medium API — Medium 数据的终极工具</title>
-    <link href="https://taotao7.top/2026/02/07/building-medium-api/"/>
-    <id>https://taotao7.top/2026/02/07/building-medium-api/</id>
+    <link href="https://taotao7.top/zh-CN/2026/02/07/building-medium-api/"/>
+    <id>https://taotao7.top/zh-CN/2026/02/07/building-medium-api/</id>
     <published>2026-02-07T06:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.239Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-      <category term="featured" scheme="https://taotao7.top/tags/featured/"/>
+      <category term="featured" scheme="https://taotao7.top/zh-CN/tags/featured/"/>
     
   </entry>
   
   <entry>
     <title>算法：排序</title>
-    <link href="https://taotao7.top/2022/08/18/algorithm-sorting/"/>
-    <id>https://taotao7.top/2022/08/18/algorithm-sorting/</id>
+    <link href="https://taotao7.top/zh-CN/2022/08/18/algorithm-sorting/"/>
+    <id>https://taotao7.top/zh-CN/2022/08/18/algorithm-sorting/</id>
     <published>2022-08-18T09:33:45.000Z</published>
     <updated>2026-02-09T02:59:42.230Z</updated>
     
@@ -58,14 +58,14 @@
     
     
     
-      <category term="Algorithm" scheme="https://taotao7.top/tags/Algorithm/"/>
+      <category term="Algorithm" scheme="https://taotao7.top/zh-CN/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Go 语言解析 YAML</title>
-    <link href="https://taotao7.top/2020/12/19/go-yaml-parsing/"/>
-    <id>https://taotao7.top/2020/12/19/go-yaml-parsing/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/19/go-yaml-parsing/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/19/go-yaml-parsing/</id>
     <published>2020-12-18T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.240Z</updated>
     
@@ -82,16 +82,16 @@
     
     
     
-      <category term="Go" scheme="https://taotao7.top/tags/Go/"/>
+      <category term="Go" scheme="https://taotao7.top/zh-CN/tags/Go/"/>
     
-      <category term="YAML" scheme="https://taotao7.top/tags/YAML/"/>
+      <category term="YAML" scheme="https://taotao7.top/zh-CN/tags/YAML/"/>
     
   </entry>
   
   <entry>
     <title>Axios 文件下载与 Ant Design 按钮</title>
-    <link href="https://taotao7.top/2020/12/07/axios-download-button/"/>
-    <id>https://taotao7.top/2020/12/07/axios-download-button/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/07/axios-download-button/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/07/axios-download-button/</id>
     <published>2020-12-06T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.239Z</updated>
     
@@ -109,16 +109,16 @@
     
     
     
-      <category term="Frontend" scheme="https://taotao7.top/tags/Frontend/"/>
+      <category term="Frontend" scheme="https://taotao7.top/zh-CN/tags/Frontend/"/>
     
-      <category term="Axios" scheme="https://taotao7.top/tags/Axios/"/>
+      <category term="Axios" scheme="https://taotao7.top/zh-CN/tags/Axios/"/>
     
   </entry>
   
   <entry>
     <title>Hexo SEO 优化：百度与谷歌</title>
-    <link href="https://taotao7.top/2020/12/06/hexo-seo-optimization/"/>
-    <id>https://taotao7.top/2020/12/06/hexo-seo-optimization/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/06/hexo-seo-optimization/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/06/hexo-seo-optimization/</id>
     <published>2020-12-05T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.240Z</updated>
     
@@ -136,16 +136,16 @@
     
     
     
-      <category term="Hexo" scheme="https://taotao7.top/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://taotao7.top/zh-CN/tags/Hexo/"/>
     
-      <category term="SEO" scheme="https://taotao7.top/tags/SEO/"/>
+      <category term="SEO" scheme="https://taotao7.top/zh-CN/tags/SEO/"/>
     
   </entry>
   
   <entry>
     <title>Koa 实现 SVG 验证码</title>
-    <link href="https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/"/>
-    <id>https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/06/koa-captcha-svg-captcha/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/06/koa-captcha-svg-captcha/</id>
     <published>2020-12-05T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.241Z</updated>
     
@@ -162,18 +162,18 @@
     
     
     
-      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://taotao7.top/zh-CN/tags/Node-js/"/>
     
-      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+      <category term="Koa" scheme="https://taotao7.top/zh-CN/tags/Koa/"/>
     
-      <category term="Captcha" scheme="https://taotao7.top/tags/Captcha/"/>
+      <category term="Captcha" scheme="https://taotao7.top/zh-CN/tags/Captcha/"/>
     
   </entry>
   
   <entry>
     <title>Koa-JWT 使用与常见问题</title>
-    <link href="https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/"/>
-    <id>https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/05/koa-jwt-usage-and-issues/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/05/koa-jwt-usage-and-issues/</id>
     <published>2020-12-04T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.241Z</updated>
     
@@ -191,18 +191,18 @@
     
     
     
-      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://taotao7.top/zh-CN/tags/Node-js/"/>
     
-      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+      <category term="Koa" scheme="https://taotao7.top/zh-CN/tags/Koa/"/>
     
-      <category term="JWT" scheme="https://taotao7.top/tags/JWT/"/>
+      <category term="JWT" scheme="https://taotao7.top/zh-CN/tags/JWT/"/>
     
   </entry>
   
   <entry>
     <title>新博客</title>
-    <link href="https://taotao7.top/2020/12/05/new-blog/"/>
-    <id>https://taotao7.top/2020/12/05/new-blog/</id>
+    <link href="https://taotao7.top/zh-CN/2020/12/05/new-blog/"/>
+    <id>https://taotao7.top/zh-CN/2020/12/05/new-blog/</id>
     <published>2020-12-04T16:00:00.000Z</published>
     <updated>2026-02-09T02:59:42.241Z</updated>
     
@@ -220,7 +220,7 @@
     
     
     
-      <category term="Journal" scheme="https://taotao7.top/tags/Journal/"/>
+      <category term="Journal" scheme="https://taotao7.top/zh-CN/tags/Journal/"/>
     
   </entry>
   

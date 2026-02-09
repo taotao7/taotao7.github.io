@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/05/koa-jwt-usage-and-issues/</loc>
+    <loc>https://taotao7.top/2020/12/07/axios-download-button/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/05/new-blog/</loc>
+    <loc>https://taotao7.top/2026/02/07/building-medium-api/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/06/koa-captcha-svg-captcha/</loc>
+    <loc>https://taotao7.top/2020/12/19/go-yaml-parsing/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/19/go-yaml-parsing/</loc>
+    <loc>https://taotao7.top/2020/12/06/hexo-seo-optimization/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/06/hexo-seo-optimization/</loc>
+    <loc>https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2020/12/07/axios-download-button/</loc>
+    <loc>https://taotao7.top/2020/12/05/new-blog/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2026/02/07/building-medium-api/</loc>
+    <loc>https://taotao7.top/2022/08/18/algorithm-sorting/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/2022/08/18/algorithm-sorting/</loc>
+    <loc>https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/project/index.html</loc>
+    <loc>https://taotao7.top/project/index.html</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/about/index.html</loc>
+    <loc>https://taotao7.top/about/index.html</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/index.html</loc>
+    <loc>https://taotao7.top/tags/index.html</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -102,7 +102,7 @@
   
 
   <url>
-    <loc>https://taotao7.top/zh-CN</loc>
+    <loc>https://taotao7.top/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -110,91 +110,91 @@
 
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Algorithm/</loc>
+    <loc>https://taotao7.top/tags/Algorithm/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Frontend/</loc>
+    <loc>https://taotao7.top/tags/Frontend/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Axios/</loc>
+    <loc>https://taotao7.top/tags/Axios/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/featured/</loc>
+    <loc>https://taotao7.top/tags/featured/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Go/</loc>
+    <loc>https://taotao7.top/tags/Go/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/YAML/</loc>
+    <loc>https://taotao7.top/tags/YAML/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Hexo/</loc>
+    <loc>https://taotao7.top/tags/Hexo/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/SEO/</loc>
+    <loc>https://taotao7.top/tags/SEO/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Node-js/</loc>
+    <loc>https://taotao7.top/tags/Node-js/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Koa/</loc>
+    <loc>https://taotao7.top/tags/Koa/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Captcha/</loc>
+    <loc>https://taotao7.top/tags/Captcha/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/Journal/</loc>
+    <loc>https://taotao7.top/tags/Journal/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taotao7.top/zh-CN/tags/JWT/</loc>
+    <loc>https://taotao7.top/tags/JWT/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
