@@ -2,6 +2,8 @@
 title: Implementing SVG Captcha in Koa
 date: 2020-12-06
 tags: [Node.js, Koa, Captcha]
+slug: koa-captcha-svg-captcha
+permalink: 2020/12/06/koa-captcha-svg-captcha/
 ---
 
 # Koa Captcha

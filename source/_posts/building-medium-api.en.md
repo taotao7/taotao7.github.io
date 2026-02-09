@@ -3,6 +3,8 @@ title: Medium API — The Ultimate Tool for Medium Data
 date: 2026-02-07 14:00:00
 tags: featured
 description: A powerful REST API to scrape articles, users, and publications. Built to overcome official interface limitations.
+slug: building-medium-api
+permalink: 2026/02/07/building-medium-api/
 ---
 
 Finally, it's here: **Medium API**.

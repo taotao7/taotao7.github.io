@@ -1,12 +1,14 @@
 ---
-title: Parsing YAML in Go
+title: Go 语言解析 YAML
 date: 2020-12-19
 tags: [Go, YAML]
+slug: go-yaml-parsing
+permalink: 2020/12/19/go-yaml-parsing/
 ---
 
 ## gopkg.in/yaml.v2
 
-Assuming `config.yaml` is in the same directory as your entry file.
+假设 `config.yaml` 与入口文件在同一目录下。
 
 ```yaml
 TodoLists:
@@ -17,7 +19,7 @@ TodoLists:
 CloudKey: adasdx7817238123213
 ```
 
-Here's how to parse it into a struct:
+以下是将其解析为结构体的方法：
 
 ```go
 package main
@@ -28,15 +30,15 @@ import (
     "gopkg.in/yaml.v2"
 )
 
-// Define the structure to match the YAML
+// 定义与 YAML 匹配的结构体
 type TodoLists struct {
-    // Use tags to map YAML keys to struct fields
+    // 使用 tags 映射 YAML 键到结构体字段
     Lists []string `yaml:"TodoLists"`
     CloudKey string `yaml:"CloudKey"`
 }
 
 func main(){
-    // Initialize the struct
+    // 初始化结构体
     todolists := TodoLists{}
     filePath := "./config.yaml"
 
@@ -46,13 +48,13 @@ func main(){
         panic(err)
     }
 
-    // Unmarshal the YAML data into the struct
+    // 将 YAML 数据反序列化到结构体中
     err = yaml.Unmarshal(buffer, &todolists)
     if err != nil {
         panic(err)
     }
 
-    // Iterate and print the list
+    // 遍历并打印列表
     for _, value := range todolists.Lists {
         fmt.Println(value)
     }

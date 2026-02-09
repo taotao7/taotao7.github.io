@@ -1,3 +1,5 @@
 language: zh-CN
 root: /zh-CN/
 public_dir: public/zh-CN
+exclude:
+  - "**/*.en.md"

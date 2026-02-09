@@ -6,7 +6,7 @@
     "build": "hexo clean && hexo generate && hexo generate --config _config.yml,_config.zh-CN.yml",
     "clean": "hexo clean",
     "deploy": "pnpm run build && hexo deploy",
-    "server": "hexo server"
+    "server": "hexo clean && hexo generate && hexo generate --config _config.yml,_config.zh-CN.yml && hexo server --static"
   },
   "hexo": {
     "version": "5.4.2"

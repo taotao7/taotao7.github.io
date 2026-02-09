@@ -7,7 +7,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 url: 'https://taotao7.top'
 root: /zh-CN/
-permalink: ':year/:month/:day/:title/'
+permalink: ':year/:month/:day/:slug/'
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
@@ -57,6 +57,10 @@ time_format: 'HH:mm:ss'
 updated_option: mtime
 per_page: 10
 pagination_dir: page
+exclude:
+  - '**/*.zh-CN.md'
+  - '**/*.zh-CN/'
+  - '**/*.en.md'
 ignore: null
 theme: chronicle
 sitemap:

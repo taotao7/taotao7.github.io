@@ -2,7 +2,7 @@
   <%- partial('_partial/section-header', { title: page.year ? page.year + (page.month ? '-' + (page.month < 10 ? '0' + page.month : page.month) : '') : __('archive'), description: '' }) %>
   
   <%
-    var posts = page.posts.sort('-date');
+    var posts = filter_posts(page.posts).sort('-date');
     var yearGroups = {};
     posts.forEach(function(post) {
       var y = date(post.date, 'YYYY');

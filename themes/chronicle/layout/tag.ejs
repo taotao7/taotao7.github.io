@@ -1,8 +1,9 @@
 <section class="taxonomy">
   <% if (page.tag) { %>
-    <%- partial('_partial/section-header', { title: '#' + page.tag, description: page.posts.length + ' ' + __('posts_suffix') }) %>
+    <% var tagPosts = filter_posts(page.posts); %>
+    <%- partial('_partial/section-header', { title: '#' + page.tag, description: tagPosts.length + ' ' + __('posts_suffix') }) %>
     <div class="chronicle-list">
-      <% page.posts.sort('-date').forEach(function(post) { %>
+      <% tagPosts.sort('-date').forEach(function(post) { %>
         <%- partial('_partial/post-card', { item: post }) %>
       <% }) %>
     </div>

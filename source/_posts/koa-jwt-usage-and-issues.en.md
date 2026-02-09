@@ -2,6 +2,8 @@
 title: Koa-JWT Usage and Common Issues
 date: 2020-12-05
 tags: [Node.js, Koa, JWT]
+slug: koa-jwt-usage-and-issues
+permalink: 2020/12/05/koa-jwt-usage-and-issues/
 ---
 
 ## Basic Usage

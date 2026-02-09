@@ -2,6 +2,8 @@
 title: Hexo SEO Optimization for Baidu and Google
 date: 2020-12-06
 tags: [Hexo, SEO]
+slug: hexo-seo-optimization
+permalink: 2020/12/06/hexo-seo-optimization/
 ---
 
 # Hexo SEO Optimization

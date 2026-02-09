@@ -1,5 +1,5 @@
 <% 
-  var allPosts = site.posts.sort('-date');
+  var allPosts = filter_posts(site.posts).sort('-date');
   var featuredCount = theme.featured_count || 2;
   
   // Get featured posts: sticky or featured front-matter

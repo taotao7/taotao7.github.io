@@ -2,6 +2,8 @@
 title: Axios File Download with Ant Design Button
 date: 2020-12-07
 tags: [Frontend, Axios]
+slug: axios-download-button
+permalink: 2020/12/07/axios-download-button/
 ---
 
 # Axios

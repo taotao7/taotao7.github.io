@@ -2,6 +2,8 @@
 title: "Algorithms: Sorting"
 date: 2022-08-18 17:33:45
 tags: [Algorithm]
+slug: algorithm-sorting
+permalink: 2022/08/18/algorithm-sorting/
 ---
 
 ## Algorithms
