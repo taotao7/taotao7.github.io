@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>tao&#39;s blog</title>
+  
+  <subtitle>Frontend, Backend, Node.js</subtitle>
+  <link href="/zh-CN/atom.xml" rel="self"/>
+  
+  <link href="https://taotao7.top/"/>
+  <updated>2026-02-09T02:59:42.239Z</updated>
+  <id>https://taotao7.top/</id>
+  
+  <author>
+    <name>tao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Medium API — Medium 数据的终极工具</title>
+    <link href="https://taotao7.top/2026/02/07/building-medium-api/"/>
+    <id>https://taotao7.top/2026/02/07/building-medium-api/</id>
+    <published>2026-02-07T06:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.239Z</updated>
+    
+    <content type="html"><![CDATA[<p>终于来了：<strong>Medium API</strong>。</p><p>它始于一个简单的个人需求：我需要一种高效批量获取 Medium 文章的方法，同时绕过官方 API 的限制。最初只是为了解决自己的问题，很快演变成了更大的项目。我构建了一套全功能的 REST API，允许你抓取关于文章、用户和出版物的全面数据。</p><p>无论你是构建内容聚合器、收集数据进行分析，还是开发自定义阅读器，这个工具都能搞定。</p><p>它托管在 <strong>RapidAPI</strong> 上。只需获取一个密钥即可开始使用。</p><p><strong>Base URL</strong>: <code>https://unofficial-medium-api-wrapper.p.rapidapi.com</code></p><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>你可以查询的内容包括：</p><ul><li><strong>文章</strong>: 获取 Markdown、HTML 或纯文本格式的内容。还可以访问点赞数和关注者等元数据。</li><li><strong>用户</strong>: 获取深度洞察——关注者、关注列表、发布历史和公开资料信息。</li><li><strong>出版物</strong>: 获取特定出版物的文章和详细信息。</li><li><strong>搜索</strong>: 执行全文搜索，包括按标签过滤。</li><li><strong>发现</strong>: 访问推荐算法数据，包括热门文章和顶级作者。</li><li><strong>列表</strong>: 抓取其他用户的阅读列表。</li></ul><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>在请求头中添加 <code>x-rapidapi-host</code> 和 <code>x-rapidapi-key</code>。在 <a href="https://rapidapi.com/mocatao7/api/unofficial-medium-api-wrapper">RapidAPI</a> 获取你的密钥。</p><h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><h4 id="JavaScript-fetch"><a href="#JavaScript-fetch" class="headerlink" title="JavaScript (fetch)"></a>JavaScript (fetch)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<br>  <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>  &#123;<br>    <span class="hljs-attr">headers</span>: &#123;<br>      <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>      <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span>,<br>    &#125;,<br>  &#125;,<br>);<br><span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br></code></pre></td></tr></table></figure><h4 id="Python-requests"><a href="#Python-requests" class="headerlink" title="Python (requests)"></a>Python (requests)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br>headers = &#123;<br>    <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>    <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span><br>&#125;<br><br>response = requests.get(<br>    <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>    headers=headers<br>)<br><span class="hljs-built_in">print</span>(response.json())<br></code></pre></td></tr></table></figure><h4 id="cURL"><a href="#cURL" class="headerlink" title="cURL"></a>cURL</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># For the CLI enthusiasts</span><br>curl --request GET \<br>     --url https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/&#123;user_id&#125;/top-articles \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-host: unofficial-medium-api-wrapper.p.rapidapi.com&#x27;</span> \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-key: YOUR_RAPIDAPI_KEY&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h2><p>API 返回标准、干净的 JSON，没有不必要的嵌套：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;success&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;abc123&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;johndoe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;fullname&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;John Doe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;followers_count&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1250</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h2><p>如果遇到任何问题，请随时通过 <code>support@taotao7.top</code> 联系。</p><p>我很期待看到你用这个 API 构建出什么。</p>]]></content>
+    
+    <summary type="html">
+    
+      一个强大的 REST API，用于抓取文章、用户和出版物。专为克服官方接口限制而构建。
+    
+    </summary>
+    
+    
+    
+      <category term="featured" scheme="https://taotao7.top/tags/featured/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：排序</title>
+    <link href="https://taotao7.top/2022/08/18/algorithm-sorting/"/>
+    <id>https://taotao7.top/2022/08/18/algorithm-sorting/</id>
+    <published>2022-08-18T09:33:45.000Z</published>
+    <updated>2026-02-09T02:59:42.230Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>最近感觉遇到了瓶颈——成长速度慢下来了。是时候巩固基础了：数据结构与算法。</p><p>过去两年过得很快，但知识积累没有跟上。我需要稍微调整方向，夯实工程基础。</p><p>今天从排序开始。</p><h3 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序 (Quick Sort)"></a>快速排序 (Quick Sort)</h3><ul><li><strong>平均时间复杂度</strong>: O(n log n)</li><li><strong>最坏时间复杂度</strong>: O(n²)</li></ul><p><img src="1.png" alt="Quick Sort"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;算法&quot;&gt;&lt;a href=&quot;#算法&quot; class=&quot;headerlink&quot; title=&quot;算法&quot;&gt;&lt;/a&gt;算法&lt;/h2&gt;&lt;p&gt;最近感觉遇到了瓶颈——成长速度慢下来了。是时候巩固基础了：数据结构与算法。&lt;/p&gt;
+&lt;p&gt;过去两年过得很快，但知识积累没有跟上。我需要稍微调
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Algorithm" scheme="https://taotao7.top/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言解析 YAML</title>
+    <link href="https://taotao7.top/2020/12/19/go-yaml-parsing/"/>
+    <id>https://taotao7.top/2020/12/19/go-yaml-parsing/</id>
+    <published>2020-12-18T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.240Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="gopkg-in-yaml-v2"><a href="#gopkg-in-yaml-v2" class="headerlink" title="gopkg.in/yaml.v2"></a>gopkg.in/yaml.v2</h2><p>假设 <code>config.yaml</code> 与入口文件在同一目录下。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">TodoLists:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">1</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">2</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">3</span><br><br><span class="hljs-attr">CloudKey:</span> <span class="hljs-string">adasdx7817238123213</span><br></code></pre></td></tr></table></figure><p>以下是将其解析为结构体的方法：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>    <span class="hljs-string">&quot;io/ioutil&quot;</span><br>    <span class="hljs-string">&quot;gopkg.in/yaml.v2&quot;</span><br>)<br><br><span class="hljs-comment">// 定义与 YAML 匹配的结构体</span><br><span class="hljs-keyword">type</span> TodoLists <span class="hljs-keyword">struct</span> &#123;<br>    <span class="hljs-comment">// 使用 tags 映射 YAML 键到结构体字段</span><br>    Lists []<span class="hljs-type">string</span> <span class="hljs-string">`yaml:&quot;TodoLists&quot;`</span><br>    CloudKey <span class="hljs-type">string</span> <span class="hljs-string">`yaml:&quot;CloudKey&quot;`</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-comment">// 初始化结构体</span><br>    todolists := TodoLists&#123;&#125;<br>    filePath := <span class="hljs-string">&quot;./config.yaml&quot;</span><br><br>    buffer, err := ioutil.ReadFile(filePath)<br><br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        <span class="hljs-built_in">panic</span>(err)<br>    &#125;<br><br>    <span class="hljs-comment">// 将 YAML 数据反序列化到结构体中</span><br>    err = yaml.Unmarshal(buffer, &amp;todolists)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        <span class="hljs-built_in">panic</span>(err)<br>    &#125;<br><br>    <span class="hljs-comment">// 遍历并打印列表</span><br>    <span class="hljs-keyword">for</span> _, value := <span class="hljs-keyword">range</span> todolists.Lists &#123;<br>        fmt.Println(value)<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// Output:</span><br><span class="hljs-comment">// Test 1</span><br><span class="hljs-comment">// Test 2</span><br><span class="hljs-comment">// Test 3</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;gopkg-in-yaml-v2&quot;&gt;&lt;a href=&quot;#gopkg-in-yaml-v2&quot; class=&quot;headerlink&quot; title=&quot;gopkg.in/yaml.v2&quot;&gt;&lt;/a&gt;gopkg.in/yaml.v2&lt;/h2&gt;&lt;p&gt;假设 &lt;code&gt;confi
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Go" scheme="https://taotao7.top/tags/Go/"/>
+    
+      <category term="YAML" scheme="https://taotao7.top/tags/YAML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Axios 文件下载与 Ant Design 按钮</title>
+    <link href="https://taotao7.top/2020/12/07/axios-download-button/"/>
+    <id>https://taotao7.top/2020/12/07/axios-download-button/</id>
+    <published>2020-12-06T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.239Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><p><img src="1.png" alt="Code Example"></p><p>这是一个使用 Ant Design 按钮触发文件下载的快速实现。逻辑适用于任何 UI 框架——核心在于处理 Axios 响应。</p><p>关键在于请求配置中设置 <code>responseType: &#39;blob&#39;</code>。</p><ol><li> <strong>请求</strong>: 发送 <code>responseType: &#39;blob&#39;</code> 的 GET 请求。</li><li> <strong>Blob 处理</strong>: 验证是否收到了文件。</li><li> <strong>触发下载</strong>: 为 blob 创建临时 URL，将其赋值给隐藏 <code>&lt;a&gt;</code> 标签的 <code>href</code>，设置 <code>download</code> 属性为期望的文件名，并编程触发点击。</li><li> <strong>清理</strong>: 将标签添加到 body，点击它，然后就完成了。</li></ol><p>这种模式正确处理二进制数据，强制浏览器下载文件而不是尝试显示它。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Axios&quot;&gt;&lt;a href=&quot;#Axios&quot; class=&quot;headerlink&quot; title=&quot;Axios&quot;&gt;&lt;/a&gt;Axios&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;Code Example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这是一个使用 Ant Des
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Frontend" scheme="https://taotao7.top/tags/Frontend/"/>
+    
+      <category term="Axios" scheme="https://taotao7.top/tags/Axios/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo SEO 优化：百度与谷歌</title>
+    <link href="https://taotao7.top/2020/12/06/hexo-seo-optimization/"/>
+    <id>https://taotao7.top/2020/12/06/hexo-seo-optimization/</id>
+    <published>2020-12-05T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.240Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-SEO-优化"><a href="#Hexo-SEO-优化" class="headerlink" title="Hexo SEO 优化"></a>Hexo SEO 优化</h1><p>首先，安装站点地图生成器：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save<br>npm install hexo-generator-baidu-sitemap --save<br></code></pre></td></tr></table></figure><p>然后在 <code>_config.yml</code> 中添加以下配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">sitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br></code></pre></td></tr></table></figure><p>重启 Hexo，你应该能在 public 文件夹中看到 <code>sitemap.xml</code> 和 <code>baidusitemap.xml</code> 生成了。</p><p><img src="1.png" alt="Sitemap Generation"></p><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>接下来，将你的站点提交给百度和 Google Search Console。你需要验证所有权。</p><p>Google 验证（推荐 URL 前缀方法）：<br><img src="3.png" alt="Google Verification"></p><p>百度验证：<br><img src="2.png" alt="Baidu Verification"></p><p>两个平台通常都提供 HTML meta 标签或验证文件。如果使用 meta 标签，将其添加到主题的 <code>head.ejs</code> 文件中。</p><p><img src="4.png" alt="Head Code"></p><h2 id="提交站点地图"><a href="#提交站点地图" class="headerlink" title="提交站点地图"></a>提交站点地图</h2><h3 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h3><p>前往链接提交部分并提交你的站点地图 URL。同时检查“抓取诊断”工具。<br><img src="6.png" alt="Baidu Sitemap"><br><img src="5.png" alt="Baidu Diagnosis"></p><p>HTTPS 认证通常需要几天时间。<br><img src="7.png" alt="HTTPS Passed"></p><h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3><p><img src="8.png" alt="Google Sitemap"><br>与百度类似，验证所有权后在 Search Console 中提交你的站点地图 URL。</p><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul><li><a href="https://ziyuan.baidu.com/site/index">百度站长工具</a></li><li><a href="https://search.google.com/search-console">Google Search Console</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo-SEO-优化&quot;&gt;&lt;a href=&quot;#Hexo-SEO-优化&quot; class=&quot;headerlink&quot; title=&quot;Hexo SEO 优化&quot;&gt;&lt;/a&gt;Hexo SEO 优化&lt;/h1&gt;&lt;p&gt;首先，安装站点地图生成器：&lt;/p&gt;
+&lt;figure class=&quot;h
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://taotao7.top/tags/Hexo/"/>
+    
+      <category term="SEO" scheme="https://taotao7.top/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Koa 实现 SVG 验证码</title>
+    <link href="https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/"/>
+    <id>https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/</id>
+    <published>2020-12-05T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.241Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Koa-Captcha"><a href="#Koa-Captcha" class="headerlink" title="Koa Captcha"></a>Koa Captcha</h1><p>首先，安装 <code>svg-captcha</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install svg-captcha --save<br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> svgCaptcha = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;svg-captcha&quot;</span>);<br></code></pre></td></tr></table></figure><p>创建一个端点来提供验证码：</p><p><img src="1.png" alt="Interface"></p><p><strong>关键点：</strong></p><ul><li><strong>大小写敏感</strong>：存储/比较文本时始终使用 <code>toLowerCase()</code>，否则验证可能会意外失败。</li><li><strong>Session</strong>：你需要 <code>koa-session</code> 来存储正确的验证码文本 (<code>ctx.session.captcha</code>) 以供后续验证。</li><li><strong>Content-Type</strong>：设置头部为 <code>image/svg+xml</code>，以便浏览器将其渲染为图像。</li></ul><h1 id="Session-配置"><a href="#Session-配置" class="headerlink" title="Session 配置"></a>Session 配置</h1><p>你需要配置 <code>koa-session</code> 才能使其工作：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">KoaSession</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;koa-session&quot;</span>);<br><span class="hljs-keyword">const</span> sessionConfig = &#123;<br>  <span class="hljs-attr">key</span>: <span class="hljs-string">&quot;appletSystem:sess&quot;</span>,<br>  <span class="hljs-attr">maxAge</span>: <span class="hljs-number">3000</span> * <span class="hljs-number">60</span>, <span class="hljs-comment">// 3 minutes</span><br>  <span class="hljs-attr">autoCommit</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">overwrite</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">httpOnly</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">signed</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">rolling</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">renew</span>: <span class="hljs-literal">true</span>,<br>  &#125;;<br><span class="hljs-keyword">const</span> sessionSignedKey = [<span class="hljs-string">&quot;appletSystem&quot;</span>]; <span class="hljs-comment">// Secret key</span><br><span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> <span class="hljs-title class_">KoaSession</span>(sessionConfig, app);<br>app.<span class="hljs-property">keys</span> = sessionSignedKey;<br>app.<span class="hljs-title function_">use</span>(session);<br></code></pre></td></tr></table></figure><h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><p>当前端请求 <code>/captcha</code> 时，服务器生成图像并将文本存储在 session 中（加密/签名在 cookie 中）。</p><p>当用户提交带有验证码的表单时，只需将提交的值与 <code>ctx.session.captcha</code> 进行比较。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Koa-Captcha&quot;&gt;&lt;a href=&quot;#Koa-Captcha&quot; class=&quot;headerlink&quot; title=&quot;Koa Captcha&quot;&gt;&lt;/a&gt;Koa Captcha&lt;/h1&gt;&lt;p&gt;首先，安装 &lt;code&gt;svg-captcha&lt;/code&gt;：&lt;/p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+    
+      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+    
+      <category term="Captcha" scheme="https://taotao7.top/tags/Captcha/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Koa-JWT 使用与常见问题</title>
+    <link href="https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/"/>
+    <id>https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.241Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p><img src="1.png" alt="Code Example"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> jwt = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;koa-jwt&quot;</span>);<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title function_">jwt</span>(&#123; <span class="hljs-attr">secret</span>: <span class="hljs-string">&quot;secret&quot;</span> &#125;).<span class="hljs-title function_">unless</span>(&#123; <span class="hljs-attr">path</span>: [<span class="hljs-regexp">/\/login/</span>, <span class="hljs-regexp">/\/captcha/</span>] &#125;));<br></code></pre></td></tr></table></figure><p>我们要定义一个用于签名/验证令牌的 <code>secret</code> 密钥。<code>unless</code> 方法接受一个正则路径数组，这些路径应排除在认证之外（如登录和验证码端点）。所有其他路由都需要有效的 JWT。</p><h2 id="登录与令牌生成"><a href="#登录与令牌生成" class="headerlink" title="登录与令牌生成"></a>登录与令牌生成</h2><p><img src="3.png" alt="Login Logic"></p><p>这是一个简化的登录流程（为简洁起见省略了密码加密）：</p><ol><li> <strong>验证凭据</strong>：对照数据库检查用户名和密码（例如使用 Sequelize）。</li><li><strong>签署令牌</strong>：如果有效，使用 <code>jwt.sign()</code> 创建令牌。<ul><li><strong>Payload</strong>：我包含 <code>authorized</code> 状态和 <code>userName</code>（或角色/权限）以便后续进行权限检查。</li><li><strong>Secret</strong>：必须与 <code>app.use(jwt(...))</code> 中的匹配。</li><li><strong>Options</strong>：设置过期时间（例如 <code>1h</code>）。</li></ul></li><li> <strong>响应</strong>：返回令牌。<strong>重要</strong>：标准通常要求在 Authorization 头部发送时加上 <code>Bearer </code> 前缀（带空格），不过这里我们只返回原始令牌字符串供客户端处理。</li></ol><p><img src="2.png" alt="Controller Logic"></p><p>控制器接收数据，调用验证函数，如果成功，将令牌发送回前端。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;Code Example&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highli
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+    
+      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+    
+      <category term="JWT" scheme="https://taotao7.top/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新博客</title>
+    <link href="https://taotao7.top/2020/12/05/new-blog/"/>
+    <id>https://taotao7.top/2020/12/05/new-blog/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2026-02-09T02:59:42.241Z</updated>
+    
+    <content type="html"><![CDATA[<p>我将用这个博客记录开发过程中遇到的问题。它作为一个个人知识库，供未来参考。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我将用这个博客记录开发过程中遇到的问题。它作为一个个人知识库，供未来参考。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Journal" scheme="https://taotao7.top/tags/Journal/"/>
+    
+  </entry>
+  
+</feed>

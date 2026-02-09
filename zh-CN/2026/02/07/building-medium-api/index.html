@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Medium API — Medium 数据的终极工具 — tao&#39;s blog</title>
+  <meta name="description" content="一个强大的 REST API，用于抓取文章、用户和出版物。专为克服官方接口限制而构建。">
+  
+  <meta name="keywords" content="nodejs c# js ts python">
+  
+  <link rel="canonical" href="https://taotao7.top/2026/02/07/building-medium-api/index.html">
+  
+  <link rel="alternate" type="application/atom+xml" title="tao&#39;s blog" href="/zh-CN/atom.xml">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Metamorphous&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/zh-CN/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+  <body>
+    <header class="header" id="header">
+  <div class="container header__inner">
+    <a class="header__logo" href="/zh-CN/" aria-label="tao&#39;s blog">
+      tao&#39;s blog
+    </a>
+    
+    <button class="header__toggle" id="nav-toggle" aria-label="切换导航">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header__nav" id="nav-menu">
+      
+        <a class="header__link" href="/zh-CN/">首页</a>
+      
+        <a class="header__link" href="/zh-CN/archives/">归档</a>
+      
+        <a class="header__link" href="/zh-CN/tags/">标签</a>
+      
+        <a class="header__link" href="/zh-CN/project/">项目</a>
+      
+        <a class="header__link" href="/zh-CN/about/">关于</a>
+      
+        <a class="header__link" target="_blank" rel="noopener" href="https://github.com/taotao7">GitHub</a>
+      
+      
+        <a class="header__link header__link--rss" href="/zh-CN/atom.xml" aria-label="RSS">RSS</a>
+      
+      <button
+        class="header__link header__link--lang"
+        id="lang-switch"
+        type="button"
+        aria-label="切换语言"
+        data-default-lang="en"
+        data-current-lang="zh-CN"
+        data-other-lang="en"
+      >EN</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="container"><article class="post">
+  <header class="post__header">
+    <h1 class="post__title">Medium API — Medium 数据的终极工具</h1>
+    <div class="post__meta">
+      <time datetime="2026-02-07">2026-02-07</time>
+      
+        <span class="post__sep">&middot;</span>
+        
+        <span class="post__reading-time">4 分钟阅读</span>
+      
+      
+    </div>
+    
+    <div class="post__tags">
+      
+        <a class="tag-pill" href="/zh-CN/tags/featured/">featured</a>
+      
+    </div>
+    
+  </header>
+
+  <div class="post__layout">
+    
+<aside class="toc-wrap" id="toc-wrap">
+  <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">内容</button>
+  <nav class="toc" id="toc">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">代码示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript-fetch"><span class="toc-text">JavaScript (fetch)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-requests"><span class="toc-text">Python (requests)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cURL"><span class="toc-text">cURL</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F"><span class="toc-text">响应格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%AF%E6%8C%81"><span class="toc-text">支持</span></a></li></ol>
+  </nav>
+</aside>
+
+
+    <div class="post__content" id="post-content">
+      <p>终于来了：<strong>Medium API</strong>。</p>
+<p>它始于一个简单的个人需求：我需要一种高效批量获取 Medium 文章的方法，同时绕过官方 API 的限制。最初只是为了解决自己的问题，很快演变成了更大的项目。我构建了一套全功能的 REST API，允许你抓取关于文章、用户和出版物的全面数据。</p>
+<p>无论你是构建内容聚合器、收集数据进行分析，还是开发自定义阅读器，这个工具都能搞定。</p>
+<p>它托管在 <strong>RapidAPI</strong> 上。只需获取一个密钥即可开始使用。</p>
+<p><strong>Base URL</strong>: <code>https://unofficial-medium-api-wrapper.p.rapidapi.com</code></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>你可以查询的内容包括：</p>
+<ul>
+<li><strong>文章</strong>: 获取 Markdown、HTML 或纯文本格式的内容。还可以访问点赞数和关注者等元数据。</li>
+<li><strong>用户</strong>: 获取深度洞察——关注者、关注列表、发布历史和公开资料信息。</li>
+<li><strong>出版物</strong>: 获取特定出版物的文章和详细信息。</li>
+<li><strong>搜索</strong>: 执行全文搜索，包括按标签过滤。</li>
+<li><strong>发现</strong>: 访问推荐算法数据，包括热门文章和顶级作者。</li>
+<li><strong>列表</strong>: 抓取其他用户的阅读列表。</li>
+</ul>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>在请求头中添加 <code>x-rapidapi-host</code> 和 <code>x-rapidapi-key</code>。在 <a target="_blank" rel="noopener" href="https://rapidapi.com/mocatao7/api/unofficial-medium-api-wrapper">RapidAPI</a> 获取你的密钥。</p>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><h4 id="JavaScript-fetch"><a href="#JavaScript-fetch" class="headerlink" title="JavaScript (fetch)"></a>JavaScript (fetch)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<br>  <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>  &#123;<br>    <span class="hljs-attr">headers</span>: &#123;<br>      <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>      <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span>,<br>    &#125;,<br>  &#125;,<br>);<br><span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br></code></pre></td></tr></table></figure>
+
+<h4 id="Python-requests"><a href="#Python-requests" class="headerlink" title="Python (requests)"></a>Python (requests)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br>headers = &#123;<br>    <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>    <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span><br>&#125;<br><br>response = requests.get(<br>    <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>    headers=headers<br>)<br><span class="hljs-built_in">print</span>(response.json())<br></code></pre></td></tr></table></figure>
+
+<h4 id="cURL"><a href="#cURL" class="headerlink" title="cURL"></a>cURL</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># For the CLI enthusiasts</span><br>curl --request GET \<br>     --url https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/&#123;user_id&#125;/top-articles \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-host: unofficial-medium-api-wrapper.p.rapidapi.com&#x27;</span> \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-key: YOUR_RAPIDAPI_KEY&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h2><p>API 返回标准、干净的 JSON，没有不必要的嵌套：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;success&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;abc123&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;johndoe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;fullname&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;John Doe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;followers_count&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1250</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h2><p>如果遇到任何问题，请随时通过 <code>support@taotao7.top</code> 联系。</p>
+<p>我很期待看到你用这个 API 构建出什么。</p>
+
+    </div>
+  </div>
+
+  <footer class="post__footer">
+    
+    <div class="post__copyright">
+      <p>作者: tao</p>
+      <p>链接: <a href="https://taotao7.top/2026/02/07/building-medium-api/">https://taotao7.top/2026/02/07/building-medium-api/</a></p>
+      <p>许可: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+    </div>
+    
+
+    
+    <nav class="post-nav">
+      
+      <span class="post-nav__link post-nav__prev"></span>
+      
+      
+      <a class="post-nav__link post-nav__next" href="/zh-CN/2022/08/18/algorithm-sorting/">
+        <span class="post-nav__label">下一篇 &rarr;</span>
+        <span class="post-nav__title">算法：排序</span>
+      </a>
+      
+    </nav>
+    
+  </footer>
+</article>
+</div>
+    </main>
+    <footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__left">
+      <span>&copy; 2026 tao</span>
+      <span class="footer__sep">&middot;</span>
+      <span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+    </div>
+    <div class="footer__right">
+      
+        
+        
+        
+      
+    </div>
+  </div>
+</footer>
+ 
+<script src="/zh-CN/js/main.js"></script>
+
+
+  <script src="/zh-CN/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"jsonPath":"/zh-CN/live2dw/assets/assets/wanko.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

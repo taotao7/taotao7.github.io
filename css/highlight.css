@@ -1,0 +1,134 @@
+.highlight {
+  margin: 1.5em 0;
+  background: #1a1d21;
+  border-radius: 2px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.highlight table {
+  margin: 0 !important;
+  width: auto !important;
+  border: none !important;
+  border-collapse: collapse !important;
+}
+.highlight table td,
+.highlight table th {
+  border: none !important;
+  padding: 0 !important;
+}
+.highlight .gutter {
+  padding: 0 12px !important;
+  text-align: right;
+  color: #6272a4;
+  border-right: 1px solid rgba(255,255,255,0.1) !important;
+  background: #191c1f !important;
+  user-select: none;
+}
+.highlight .gutter pre {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  font-family: 'Ioskeley Mono', monospace !important;
+  font-size: 0.875rem !important;
+  color: #6272a4 !important;
+}
+.highlight .code {
+  padding: 0 12px !important;
+  background: #1a1d21 !important;
+  width: 100%;
+}
+.highlight .code pre {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  font-family: 'Ioskeley Mono', monospace !important;
+  font-size: 0.875rem !important;
+  color: #d4d4d4 !important;
+}
+code {
+  font-family: 'Ioskeley Mono', monospace;
+}
+.hljs-comment,
+.hljs-quote,
+.comment,
+.quote {
+  color: #6272a4;
+  font-style: italic;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula,
+.keyword,
+.function .keyword {
+  color: #bd93f9;
+}
+.hljs-function,
+.hljs-title,
+.title,
+.function .title {
+  color: #8be9fd;
+}
+.hljs-built_in,
+.hljs-class .hljs-title,
+.built_in,
+.class .title {
+  color: #ffb86c;
+}
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number,
+.attr,
+.variable,
+.attribute,
+.number {
+  color: #ffb86c;
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string,
+.string,
+.regexp {
+  color: #50fa7b;
+}
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst,
+.tag .name,
+.selector-tag {
+  color: #f55;
+}
+.hljs-literal,
+.literal {
+  color: #8be9fd;
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.symbol,
+.bullet {
+  color: #8be9fd;
+}
+.hljs-emphasis,
+.emphasis {
+  font-style: italic;
+}
+.hljs-strong,
+.strong {
+  font-weight: bold;
+}
+.hljs-link {
+  text-decoration: underline;
+}

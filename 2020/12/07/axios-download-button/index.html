@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Axios File Download with Ant Design Button — tao&#39;s blog</title>
+  <meta name="description" content="Tech Blog">
+  
+  <meta name="keywords" content="nodejs c# js ts python">
+  
+  <link rel="canonical" href="https://taotao7.top/2020/12/07/axios-download-button/index.html">
+  
+  <link rel="alternate" type="application/atom+xml" title="tao&#39;s blog" href="/atom.xml">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Metamorphous&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+  <body>
+    <header class="header" id="header">
+  <div class="container header__inner">
+    <a class="header__logo" href="/" aria-label="tao&#39;s blog">
+      tao&#39;s blog
+    </a>
+    
+    <button class="header__toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header__nav" id="nav-menu">
+      
+        <a class="header__link" href="/">Home</a>
+      
+        <a class="header__link" href="/archives/">Archives</a>
+      
+        <a class="header__link" href="/tags/">Tags</a>
+      
+        <a class="header__link" href="/project/">Project</a>
+      
+        <a class="header__link" href="/about/">About</a>
+      
+        <a class="header__link" target="_blank" rel="noopener" href="https://github.com/taotao7">GitHub</a>
+      
+      
+        <a class="header__link header__link--rss" href="/atom.xml" aria-label="RSS">RSS</a>
+      
+      <button
+        class="header__link header__link--lang"
+        id="lang-switch"
+        type="button"
+        aria-label="Switch language"
+        data-default-lang="en"
+        data-current-lang="en"
+        data-other-lang="zh-CN"
+      >中文</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="container"><article class="post">
+  <header class="post__header">
+    <h1 class="post__title">Axios File Download with Ant Design Button</h1>
+    <div class="post__meta">
+      <time datetime="2020-12-07">2020-12-07</time>
+      
+        <span class="post__sep">&middot;</span>
+        
+        <span class="post__reading-time">2 min read</span>
+      
+      
+    </div>
+    
+    <div class="post__tags">
+      
+        <a class="tag-pill" href="/tags/Frontend/">Frontend</a>
+      
+        <a class="tag-pill" href="/tags/Axios/">Axios</a>
+      
+    </div>
+    
+  </header>
+
+  <div class="post__layout">
+    
+<aside class="toc-wrap" id="toc-wrap">
+  <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">Contents</button>
+  <nav class="toc" id="toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Axios"><span class="toc-text">Axios</span></a></li></ol>
+  </nav>
+</aside>
+
+
+    <div class="post__content" id="post-content">
+      <h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><p><img src="1.png" alt="Code Example"></p>
+<p>Here’s a quick implementation using an Ant Design button to trigger a file download. The logic applies to any UI framework—the core is handling the Axios response.</p>
+<p>The key is setting <code>responseType: &#39;blob&#39;</code> in the request config.</p>
+<ol>
+<li> <strong>Request</strong>: Send a GET request with <code>responseType: &#39;blob&#39;</code>.</li>
+<li> <strong>Blob Handling</strong>: Verify you received the file.</li>
+<li> <strong>Trigger Download</strong>: Create a temporary URL for the blob, assign it to a hidden <code>&lt;a&gt;</code> tag’s <code>href</code>, set the <code>download</code> attribute to your desired filename, and programmatically click it.</li>
+<li> <strong>Cleanup</strong>: Append the tag to the body, click it, and you’re done.</li>
+</ol>
+<p>This pattern handles the binary data correctly and forces the browser to download the file instead of trying to display it.</p>
+
+    </div>
+  </div>
+
+  <footer class="post__footer">
+    
+    <div class="post__copyright">
+      <p>Author: tao</p>
+      <p>Link: <a href="https://taotao7.top/2020/12/07/axios-download-button/">https://taotao7.top/2020/12/07/axios-download-button/</a></p>
+      <p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+    </div>
+    
+
+    
+    <nav class="post-nav">
+      
+      <a class="post-nav__link post-nav__prev" href="/2020/12/19/go-yaml-parsing/">
+        <span class="post-nav__label">&larr; Previous</span>
+        <span class="post-nav__title">Parsing YAML in Go</span>
+      </a>
+      
+      
+      <a class="post-nav__link post-nav__next" href="/2020/12/06/hexo-seo-optimization/">
+        <span class="post-nav__label">Next &rarr;</span>
+        <span class="post-nav__title">Hexo SEO Optimization for Baidu and Google</span>
+      </a>
+      
+    </nav>
+    
+  </footer>
+</article>
+</div>
+    </main>
+    <footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__left">
+      <span>&copy; 2026 tao</span>
+      <span class="footer__sep">&middot;</span>
+      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+    </div>
+    <div class="footer__right">
+      
+        
+        
+        
+      
+    </div>
+  </div>
+</footer>
+ 
+<script src="/js/main.js"></script>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"display":null,"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20,"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

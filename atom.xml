@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>tao&#39;s blog</title>
+  
+  <subtitle>Frontend, Backend, Node.js</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://taotao7.top/"/>
+  <updated>2026-02-09T03:13:24.522Z</updated>
+  <id>https://taotao7.top/</id>
+  
+  <author>
+    <name>tao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Medium API — The Ultimate Tool for Medium Data</title>
+    <link href="https://taotao7.top/2026/02/07/building-medium-api/"/>
+    <id>https://taotao7.top/2026/02/07/building-medium-api/</id>
+    <published>2026-02-07T06:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>Finally, it’s here: <strong>Medium API</strong>.</p><p>It started with a simple personal requirement: I needed a way to batch fetch Medium articles efficiently while bypassing the limitations of the official API. What began as a solution to my own problem quickly evolved into something bigger. I built a full-suite REST API that allows you to scrape comprehensive data on articles, users, and publications.</p><p>Whether you are building a content aggregator, gathering data for analysis, or developing a custom reader, this tool handles it all.</p><p>It is hosted on <strong>RapidAPI</strong>. Simply grab a key and you are ready to go.</p><p><strong>Base URL</strong>: <code>https://unofficial-medium-api-wrapper.p.rapidapi.com</code></p><h2 id="Capabilities"><a href="#Capabilities" class="headerlink" title="Capabilities"></a>Capabilities</h2><p>Here is what you can query:</p><ul><li><strong>Articles</strong>: Retrieve content in Markdown, HTML, or plain text. You can also access metadata like claps and followers.</li><li><strong>Users</strong>: Get deep insights—followers, following lists, publication history, and public profile info.</li><li><strong>Publications</strong>: Fetch articles and details from specific publications.</li><li><strong>Search</strong>: Perform full-text searches, including filtering by tags.</li><li><strong>Discovery</strong>: Access recommendation algorithm data, including top articles and top writers.</li><li><strong>Lists</strong>: Scrape reading lists from other users.</li></ul><h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>Add <code>x-rapidapi-host</code> and <code>x-rapidapi-key</code> to your request headers. Get your key at <a href="https://rapidapi.com/mocatao7/api/unofficial-medium-api-wrapper">RapidAPI</a>.</p><h3 id="Code-Examples"><a href="#Code-Examples" class="headerlink" title="Code Examples"></a>Code Examples</h3><h4 id="JavaScript-fetch"><a href="#JavaScript-fetch" class="headerlink" title="JavaScript (fetch)"></a>JavaScript (fetch)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<br>  <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>  &#123;<br>    <span class="hljs-attr">headers</span>: &#123;<br>      <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>      <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span>,<br>    &#125;,<br>  &#125;,<br>);<br><span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br></code></pre></td></tr></table></figure><h4 id="Python-requests"><a href="#Python-requests" class="headerlink" title="Python (requests)"></a>Python (requests)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br>headers = &#123;<br>    <span class="hljs-string">&quot;x-rapidapi-host&quot;</span>: <span class="hljs-string">&quot;unofficial-medium-api-wrapper.p.rapidapi.com&quot;</span>,<br>    <span class="hljs-string">&quot;x-rapidapi-key&quot;</span>: <span class="hljs-string">&quot;YOUR_RAPIDAPI_KEY&quot;</span><br>&#125;<br><br>response = requests.get(<br>    <span class="hljs-string">&quot;https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/1234567890&quot;</span>,<br>    headers=headers<br>)<br><span class="hljs-built_in">print</span>(response.json())<br></code></pre></td></tr></table></figure><h4 id="cURL"><a href="#cURL" class="headerlink" title="cURL"></a>cURL</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># For the CLI enthusiasts</span><br>curl --request GET \<br>     --url https://unofficial-medium-api-wrapper.p.rapidapi.com/api/user/&#123;user_id&#125;/top-articles \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-host: unofficial-medium-api-wrapper.p.rapidapi.com&#x27;</span> \<br>     --header <span class="hljs-string">&#x27;x-rapidapi-key: YOUR_RAPIDAPI_KEY&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="Response-Format"><a href="#Response-Format" class="headerlink" title="Response Format"></a>Response Format</h2><p>The API returns standard, clean JSON without unnecessary nesting:</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;success&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;abc123&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;johndoe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;fullname&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;John Doe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;followers_count&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1250</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h2><p>If you encounter any issues, feel free to reach out via <code>support@taotao7.top</code>.</p><p>I am excited to see what you build with this API.</p>]]></content>
+    
+    <summary type="html">
+    
+      A powerful REST API to scrape articles, users, and publications. Built to overcome official interface limitations.
+    
+    </summary>
+    
+    
+    
+      <category term="featured" scheme="https://taotao7.top/tags/featured/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Algorithms: Sorting</title>
+    <link href="https://taotao7.top/2022/08/18/algorithm-sorting/"/>
+    <id>https://taotao7.top/2022/08/18/algorithm-sorting/</id>
+    <published>2022-08-18T09:33:45.000Z</published>
+    <updated>2026-02-09T03:13:24.521Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><p>I’ve felt a bit stuck recently—my growth rate has slowed down. It’s time to reinforce the fundamentals: Data Structures and Algorithms.</p><p>The last two years flew by, but knowledge accumulation hasn’t kept pace. I need to pivot slightly and solidify my engineering foundation.</p><p>Starting today with Sorting.</p><h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><ul><li><strong>Average Case</strong>: O(n log n)</li><li><strong>Worst Case</strong>: O(n²)</li></ul><p><img src="1.png" alt="Quick Sort"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Algorithms&quot;&gt;&lt;a href=&quot;#Algorithms&quot; class=&quot;headerlink&quot; title=&quot;Algorithms&quot;&gt;&lt;/a&gt;Algorithms&lt;/h2&gt;&lt;p&gt;I’ve felt a bit stuck recently—my grow
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Algorithm" scheme="https://taotao7.top/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Parsing YAML in Go</title>
+    <link href="https://taotao7.top/2020/12/19/go-yaml-parsing/"/>
+    <id>https://taotao7.top/2020/12/19/go-yaml-parsing/</id>
+    <published>2020-12-18T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="gopkg-in-yaml-v2"><a href="#gopkg-in-yaml-v2" class="headerlink" title="gopkg.in/yaml.v2"></a>gopkg.in/yaml.v2</h2><p>Assuming <code>config.yaml</code> is in the same directory as your entry file.</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">TodoLists:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">1</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">2</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Test</span> <span class="hljs-number">3</span><br><br><span class="hljs-attr">CloudKey:</span> <span class="hljs-string">adasdx7817238123213</span><br></code></pre></td></tr></table></figure><p>Here’s how to parse it into a struct:</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>    <span class="hljs-string">&quot;io/ioutil&quot;</span><br>    <span class="hljs-string">&quot;gopkg.in/yaml.v2&quot;</span><br>)<br><br><span class="hljs-comment">// Define the structure to match the YAML</span><br><span class="hljs-keyword">type</span> TodoLists <span class="hljs-keyword">struct</span> &#123;<br>    <span class="hljs-comment">// Use tags to map YAML keys to struct fields</span><br>    Lists []<span class="hljs-type">string</span> <span class="hljs-string">`yaml:&quot;TodoLists&quot;`</span><br>    CloudKey <span class="hljs-type">string</span> <span class="hljs-string">`yaml:&quot;CloudKey&quot;`</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-comment">// Initialize the struct</span><br>    todolists := TodoLists&#123;&#125;<br>    filePath := <span class="hljs-string">&quot;./config.yaml&quot;</span><br><br>    buffer, err := ioutil.ReadFile(filePath)<br><br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        <span class="hljs-built_in">panic</span>(err)<br>    &#125;<br><br>    <span class="hljs-comment">// Unmarshal the YAML data into the struct</span><br>    err = yaml.Unmarshal(buffer, &amp;todolists)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        <span class="hljs-built_in">panic</span>(err)<br>    &#125;<br><br>    <span class="hljs-comment">// Iterate and print the list</span><br>    <span class="hljs-keyword">for</span> _, value := <span class="hljs-keyword">range</span> todolists.Lists &#123;<br>        fmt.Println(value)<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// Output:</span><br><span class="hljs-comment">// Test 1</span><br><span class="hljs-comment">// Test 2</span><br><span class="hljs-comment">// Test 3</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;gopkg-in-yaml-v2&quot;&gt;&lt;a href=&quot;#gopkg-in-yaml-v2&quot; class=&quot;headerlink&quot; title=&quot;gopkg.in/yaml.v2&quot;&gt;&lt;/a&gt;gopkg.in/yaml.v2&lt;/h2&gt;&lt;p&gt;Assuming &lt;code
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Go" scheme="https://taotao7.top/tags/Go/"/>
+    
+      <category term="YAML" scheme="https://taotao7.top/tags/YAML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Axios File Download with Ant Design Button</title>
+    <link href="https://taotao7.top/2020/12/07/axios-download-button/"/>
+    <id>https://taotao7.top/2020/12/07/axios-download-button/</id>
+    <published>2020-12-06T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><p><img src="1.png" alt="Code Example"></p><p>Here’s a quick implementation using an Ant Design button to trigger a file download. The logic applies to any UI framework—the core is handling the Axios response.</p><p>The key is setting <code>responseType: &#39;blob&#39;</code> in the request config.</p><ol><li> <strong>Request</strong>: Send a GET request with <code>responseType: &#39;blob&#39;</code>.</li><li> <strong>Blob Handling</strong>: Verify you received the file.</li><li> <strong>Trigger Download</strong>: Create a temporary URL for the blob, assign it to a hidden <code>&lt;a&gt;</code> tag’s <code>href</code>, set the <code>download</code> attribute to your desired filename, and programmatically click it.</li><li> <strong>Cleanup</strong>: Append the tag to the body, click it, and you’re done.</li></ol><p>This pattern handles the binary data correctly and forces the browser to download the file instead of trying to display it.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Axios&quot;&gt;&lt;a href=&quot;#Axios&quot; class=&quot;headerlink&quot; title=&quot;Axios&quot;&gt;&lt;/a&gt;Axios&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;Code Example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here’s a quick
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Frontend" scheme="https://taotao7.top/tags/Frontend/"/>
+    
+      <category term="Axios" scheme="https://taotao7.top/tags/Axios/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo SEO Optimization for Baidu and Google</title>
+    <link href="https://taotao7.top/2020/12/06/hexo-seo-optimization/"/>
+    <id>https://taotao7.top/2020/12/06/hexo-seo-optimization/</id>
+    <published>2020-12-05T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-SEO-Optimization"><a href="#Hexo-SEO-Optimization" class="headerlink" title="Hexo SEO Optimization"></a>Hexo SEO Optimization</h1><p>First, install the sitemap generators:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save<br>npm install hexo-generator-baidu-sitemap --save<br></code></pre></td></tr></table></figure><p>Then add the following configuration to your <code>_config.yml</code>:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">sitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br></code></pre></td></tr></table></figure><p>Restart Hexo, and you should see <code>sitemap.xml</code> and <code>baidusitemap.xml</code> generated in your public folder.</p><p><img src="1.png" alt="Sitemap Generation"></p><h2 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h2><p>Next, submit your site to Baidu and Google Search Console. You’ll need to verify ownership.</p><p>Google verification (URL prefix method recommended):<br><img src="3.png" alt="Google Verification"></p><p>Baidu verification:<br><img src="2.png" alt="Baidu Verification"></p><p>Both platforms usually provide an HTML meta tag or verification file. If using the meta tag, add it to your theme’s <code>head.ejs</code> file.</p><p><img src="4.png" alt="Head Code"></p><h2 id="Submitting-Sitemaps"><a href="#Submitting-Sitemaps" class="headerlink" title="Submitting Sitemaps"></a>Submitting Sitemaps</h2><h3 id="Baidu"><a href="#Baidu" class="headerlink" title="Baidu"></a>Baidu</h3><p>Go to the Link Submission section and submit your sitemap URL. Also check the “Crawl Diagnosis” tool.<br><img src="6.png" alt="Baidu Sitemap"><br><img src="5.png" alt="Baidu Diagnosis"></p><p>HTTPS certification usually takes a couple of days.<br><img src="7.png" alt="HTTPS Passed"></p><h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3><p><img src="8.png" alt="Google Sitemap"><br>Similar to Baidu, verify ownership and then submit your sitemap URL in the Search Console.</p><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul><li><a href="https://ziyuan.baidu.com/site/index">Baidu Webmaster Tools</a></li><li><a href="https://search.google.com/search-console">Google Search Console</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo-SEO-Optimization&quot;&gt;&lt;a href=&quot;#Hexo-SEO-Optimization&quot; class=&quot;headerlink&quot; title=&quot;Hexo SEO Optimization&quot;&gt;&lt;/a&gt;Hexo SEO Optimization&lt;/
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://taotao7.top/tags/Hexo/"/>
+    
+      <category term="SEO" scheme="https://taotao7.top/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Implementing SVG Captcha in Koa</title>
+    <link href="https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/"/>
+    <id>https://taotao7.top/2020/12/06/koa-captcha-svg-captcha/</id>
+    <published>2020-12-05T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Koa-Captcha"><a href="#Koa-Captcha" class="headerlink" title="Koa Captcha"></a>Koa Captcha</h1><p>First, install <code>svg-captcha</code>:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install svg-captcha --save<br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> svgCaptcha = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;svg-captcha&quot;</span>);<br></code></pre></td></tr></table></figure><p>Create an endpoint to serve the captcha:</p><p><img src="1.png" alt="Interface"></p><p><strong>Key Points:</strong></p><ul><li><strong>Case Sensitivity</strong>: Always use <code>toLowerCase()</code> when storing/comparing the text, otherwise validation will fail unexpectedly.</li><li><strong>Session</strong>: You need <code>koa-session</code> to store the correct captcha text (<code>ctx.session.captcha</code>) for later verification.</li><li><strong>Content-Type</strong>: Set the header to <code>image/svg+xml</code> so the browser renders it as an image.</li></ul><h1 id="Session-Configuration"><a href="#Session-Configuration" class="headerlink" title="Session Configuration"></a>Session Configuration</h1><p>You need to configure <code>koa-session</code> for this to work:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">KoaSession</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;koa-session&quot;</span>);<br><span class="hljs-keyword">const</span> sessionConfig = &#123;<br>  <span class="hljs-attr">key</span>: <span class="hljs-string">&quot;appletSystem:sess&quot;</span>,<br>  <span class="hljs-attr">maxAge</span>: <span class="hljs-number">3000</span> * <span class="hljs-number">60</span>, <span class="hljs-comment">// 3 minutes</span><br>  <span class="hljs-attr">autoCommit</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">overwrite</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">httpOnly</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">signed</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">rolling</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">renew</span>: <span class="hljs-literal">true</span>,<br>&#125;;<br><span class="hljs-keyword">const</span> sessionSignedKey = [<span class="hljs-string">&quot;appletSystem&quot;</span>]; <span class="hljs-comment">// Secret key</span><br><span class="hljs-keyword">const</span> session = <span class="hljs-keyword">new</span> <span class="hljs-title class_">KoaSession</span>(sessionConfig, app);<br>app.<span class="hljs-property">keys</span> = sessionSignedKey;<br>app.<span class="hljs-title function_">use</span>(session);<br></code></pre></td></tr></table></figure><h1 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h1><p>When the frontend requests <code>/captcha</code>, the server generates the image and stores the text in the session (encrypted/signed in the cookie).</p><p>When the user submits the form with the captcha code, you simply compare the submitted value with <code>ctx.session.captcha</code>.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Koa-Captcha&quot;&gt;&lt;a href=&quot;#Koa-Captcha&quot; class=&quot;headerlink&quot; title=&quot;Koa Captcha&quot;&gt;&lt;/a&gt;Koa Captcha&lt;/h1&gt;&lt;p&gt;First, install &lt;code&gt;svg-captcha&lt;/
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+    
+      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+    
+      <category term="Captcha" scheme="https://taotao7.top/tags/Captcha/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Koa-JWT Usage and Common Issues</title>
+    <link href="https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/"/>
+    <id>https://taotao7.top/2020/12/05/koa-jwt-usage-and-issues/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.521Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h2><p><img src="1.png" alt="Code Example"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> jwt = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;koa-jwt&quot;</span>);<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title function_">jwt</span>(&#123; <span class="hljs-attr">secret</span>: <span class="hljs-string">&quot;secret&quot;</span> &#125;).<span class="hljs-title function_">unless</span>(&#123; <span class="hljs-attr">path</span>: [<span class="hljs-regexp">/\/login/</span>, <span class="hljs-regexp">/\/captcha/</span>] &#125;));<br></code></pre></td></tr></table></figure><p>We define a <code>secret</code> key for signing/verifying tokens. The <code>unless</code> method takes an array of regex paths that should be excluded from authentication (like login and captcha endpoints). All other routes will require a valid JWT.</p><h2 id="Login-and-Token-Generation"><a href="#Login-and-Token-Generation" class="headerlink" title="Login and Token Generation"></a>Login and Token Generation</h2><p><img src="3.png" alt="Login Logic"></p><p>Here’s a simplified login flow (password encryption omitted for brevity):</p><ol><li> <strong>Verify Credentials</strong>: Check username and password against the database (e.g., using Sequelize).</li><li><strong>Sign Token</strong>: If valid, use <code>jwt.sign()</code> to create a token.<ul><li><strong>Payload</strong>: I include <code>authorized</code> status and <code>userName</code> (or role/permissions) to facilitate permission checks later.</li><li><strong>Secret</strong>: Must match the one in <code>app.use(jwt(...))</code>.</li><li><strong>Options</strong>: Set an expiration time (e.g., <code>1h</code>).</li></ul></li><li> <strong>Response</strong>: Return the token. <strong>Important</strong>: The token standard usually requires the <code>Bearer </code> prefix (with a space) when sending it back in the Authorization header, though here we just return the raw token string for the client to handle.</li></ol><p><img src="2.png" alt="Controller Logic"></p><p>The controller receives the data, calls the verification function, and if successful, sends the token back to the frontend.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Basic-Usage&quot;&gt;&lt;a href=&quot;#Basic-Usage&quot; class=&quot;headerlink&quot; title=&quot;Basic Usage&quot;&gt;&lt;/a&gt;Basic Usage&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;Code Example
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Node.js" scheme="https://taotao7.top/tags/Node-js/"/>
+    
+      <category term="Koa" scheme="https://taotao7.top/tags/Koa/"/>
+    
+      <category term="JWT" scheme="https://taotao7.top/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>New Blog</title>
+    <link href="https://taotao7.top/2020/12/05/new-blog/"/>
+    <id>https://taotao7.top/2020/12/05/new-blog/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2026-02-09T03:13:24.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I’ll use this blog to record issues I encounter during development. It serves as a personal knowledge base for future reference.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Journal" scheme="https://taotao7.top/tags/Journal/"/>
+    
+  </entry>
+  
+</feed>
