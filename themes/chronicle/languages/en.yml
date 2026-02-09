@@ -3,7 +3,25 @@ archive: Archives
 tag: Tags
 category: Categories
 about: About
+project: Project
+github: GitHub
 prev: Previous
 next: Next
 featured: Featured
 chronicle: Chronicle
+chronicle_desc: Documenting my technical journey.
+newer: Newer
+older: Older
+newer_posts: Newer posts
+older_posts: Older posts
+contents: Contents
+toc_toggle: Toggle table of contents
+toggle_navigation: Toggle navigation
+switch_lang: Switch language
+min_read: min read
+posts_suffix: posts
+author_label: Author
+link_label: Link
+license_label: License
+powered_by: Powered by
+back_to_top: Back to top

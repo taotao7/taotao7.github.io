@@ -1,6 +1,6 @@
 <% if (theme.toc && toc(page.content)) { %>
 <aside class="toc-wrap" id="toc-wrap">
-  <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">Contents</button>
+  <button class="toc-toggle" id="toc-toggle" aria-label="<%= __('toc_toggle') %>"><%= __('contents') %></button>
   <nav class="toc" id="toc">
     <%- toc(page.content, {list_number: false}) %>
   </nav>

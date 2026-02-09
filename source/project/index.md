@@ -48,7 +48,6 @@ GitHub CLI extension for releasing assets to OSS (Object Storage Service).
 
 - **[Hello-Wallpaper](https://github.com/taotao7/Hello-Wallpaper)** - Native macOS wallpaper app powered by Wallhaven.cc
 - **[PentaKill](https://github.com/taotao7/PentaKill)** - macOS system tray app for monitoring and managing network ports
-- **[desktop-timer](https://github.com/taotao7/desktop-timer)** - Desktop timer application
 
 ## Web Projects
 

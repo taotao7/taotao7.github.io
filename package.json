@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo clean && hexo generate && hexo generate --config _config.yml,_config.zh-CN.yml",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "pnpm run build && hexo deploy",
     "server": "hexo server"
   },
   "hexo": {
@@ -26,5 +26,6 @@
     "hexo-renderer-marked": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
 }

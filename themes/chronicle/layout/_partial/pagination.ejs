@@ -1,15 +1,15 @@
 <% if (page.total > 1) { %>
 <nav class="pagination">
   <% if (page.prev) { %>
-    <a class="pagination__link pagination__prev" href="<%- url_for(page.prev_link) %>" aria-label="Newer posts">&larr; Newer</a>
+    <a class="pagination__link pagination__prev" href="<%- url_for(page.prev_link) %>" aria-label="<%= __('newer_posts') %>">&larr; <%= __('newer') %></a>
   <% } else { %>
-    <span class="pagination__link pagination__prev pagination__disabled">&larr; Newer</span>
+    <span class="pagination__link pagination__prev pagination__disabled">&larr; <%= __('newer') %></span>
   <% } %>
   <span class="pagination__info"><%= page.current %> / <%= page.total %></span>
   <% if (page.next) { %>
-    <a class="pagination__link pagination__next" href="<%- url_for(page.next_link) %>" aria-label="Older posts">Older &rarr;</a>
+    <a class="pagination__link pagination__next" href="<%- url_for(page.next_link) %>" aria-label="<%= __('older_posts') %>"><%= __('older') %> &rarr;</a>
   <% } else { %>
-    <span class="pagination__link pagination__next pagination__disabled">Older &rarr;</span>
+    <span class="pagination__link pagination__next pagination__disabled"><%= __('older') %> &rarr;</span>
   <% } %>
 </nav>
 <% } %>

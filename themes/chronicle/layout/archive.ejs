@@ -1,5 +1,5 @@
 <section class="archive">
-  <%- partial('_partial/section-header', { title: page.year ? page.year + (page.month ? '-' + (page.month < 10 ? '0' + page.month : page.month) : '') : 'Archives', description: '' }) %>
+  <%- partial('_partial/section-header', { title: page.year ? page.year + (page.month ? '-' + (page.month < 10 ? '0' + page.month : page.month) : '') : __('archive'), description: '' }) %>
   
   <%
     var posts = page.posts.sort('-date');

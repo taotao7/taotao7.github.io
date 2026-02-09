@@ -2,12 +2,12 @@
 
 # Navigation
 nav:
-  Home: /
-  Archives: /archives/
-  Tags: /tags/
-  Project: /project/
-  About: /about/
-  GitHub: https://github.com/taotao7
+  home: /
+  archive: /archives/
+  tag: /tags/
+  project: /project/
+  about: /about/
+  github: https://github.com/taotao7
 
 # Accent color (amber/warm orange)
 accent_color: "#D4883A"

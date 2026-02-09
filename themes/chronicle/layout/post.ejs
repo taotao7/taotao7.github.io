@@ -5,7 +5,10 @@
       <time datetime="<%= date(page.date, 'YYYY-MM-DD') %>"><%= date(page.date, 'YYYY-MM-DD') %></time>
       <% if (theme.reading_time) { %>
         <span class="post__sep">&middot;</span>
-        <span class="post__reading-time"><%= Math.max(1, Math.ceil(strip_html(page.content).length / 500)) %> min read</span>
+        <%
+          var readingMinutes = Math.max(1, Math.ceil(strip_html(page.content).length / 500));
+        %>
+        <span class="post__reading-time"><%= readingMinutes %> <%= __('min_read') %></span>
       <% } %>
       <% if (page.categories && page.categories.length) { %>
         <span class="post__sep">&middot;</span>
@@ -33,9 +36,9 @@
   <footer class="post__footer">
     <% if (theme.copyright) { %>
     <div class="post__copyright">
-      <p>Author: <%= config.author || config.title %></p>
-      <p>Link: <a href="<%- page.permalink %>"><%= page.permalink %></a></p>
-      <p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+      <p><%= __('author_label') %>: <%= config.author || config.title %></p>
+      <p><%= __('link_label') %>: <a href="<%- page.permalink %>"><%= page.permalink %></a></p>
+      <p><%= __('license_label') %>: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
     </div>
     <% } %>
 
@@ -43,7 +46,7 @@
     <nav class="post-nav">
       <% if (page.prev) { %>
       <a class="post-nav__link post-nav__prev" href="<%- url_for(page.prev.path) %>">
-        <span class="post-nav__label">&larr; Previous</span>
+        <span class="post-nav__label">&larr; <%= __('prev') %></span>
         <span class="post-nav__title"><%= page.prev.title %></span>
       </a>
       <% } else { %>
@@ -51,7 +54,7 @@
       <% } %>
       <% if (page.next) { %>
       <a class="post-nav__link post-nav__next" href="<%- url_for(page.next.path) %>">
-        <span class="post-nav__label">Next &rarr;</span>
+        <span class="post-nav__label"><%= __('next') %> &rarr;</span>
         <span class="post-nav__title"><%= page.next.title %></span>
       </a>
       <% } %>

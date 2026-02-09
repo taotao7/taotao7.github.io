@@ -29,7 +29,7 @@
 
 <% if (featuredPosts.length > 0) { %>
 <section class="section section--featured">
-  <%- partial('_partial/section-header', { title: 'Featured', description: '' }) %>
+  <%- partial('_partial/section-header', { title: __('featured'), description: '' }) %>
   <div class="featured-list">
     <% featuredPosts.forEach(function(post) { %>
       <%- partial('_partial/featured-item', { item: post }) %>
@@ -39,7 +39,7 @@
 <% } %>
 
 <section class="section section--chronicle">
-  <%- partial('_partial/section-header', { title: 'Chronicle', description: 'Documenting my technical journey.' }) %>
+  <%- partial('_partial/section-header', { title: __('chronicle'), description: __('chronicle_desc') }) %>
   <div class="chronicle-list">
     <% months.forEach(function(month) { %>
       <div class="chronicle-month">
