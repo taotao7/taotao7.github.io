@@ -1,0 +1,350 @@
+// ─── Technical Blueprint Printer Theme (Line Art) ──────────
+
+// Paper tokens
+$paper          = #f5f0e6
+$paper-edge     = #ebe5d8
+$ink            = #1a1714
+$ink-muted      = #5c564d
+$ink-dim        = #8a847a
+$ink-line       = rgba(0, 0, 0, 0.08)
+$ink-line-strong = rgba(0, 0, 0, 0.15)
+$line-color     = rgba(255, 255, 255, 0.12)
+$line-strong    = rgba(255, 255, 255, 0.25)
+$accent         = #D4883A
+$paper-width    = 680px
+
+// ─── The Blueprint Container ───────────────────────────────
+.printer-slot
+  position sticky
+  top 56px
+  z-index 150
+  height 100px
+  background #141414
+  display flex
+  align-items flex-end
+  justify-content center
+  overflow visible
+  &::after
+    content ''
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    height 1px
+    background linear-gradient(90deg, transparent, $line-strong 20%, $line-strong 80%, transparent)
+
+.printer-slot__inner
+  width 100%
+  max-width 1000px
+  height 100%
+  position relative
+  display flex
+  align-items flex-end
+  justify-content center
+  padding-bottom 10px
+
+.printer-blueprint
+  display flex
+  align-items flex-end
+  gap 40px
+  position relative
+  width 100%
+  justify-content center
+
+// ─── Gear/Roller Units (The recognizable parts) ───────────
+.printer-gear-unit
+  display flex
+  flex-direction column
+  align-items center
+  margin-bottom 5px
+
+.printer-roller-wire
+  width 36px
+  height 36px
+  border 1px dashed $line-strong
+  border-radius 50%
+  position relative
+  z-index 160 
+  background rgba(20, 20, 20, 0.9) 
+  &::before
+    content ''
+    position absolute
+    top 50%; left 50%;
+    transform translate(-50%, -50%)
+    width 8px; height 8px;
+    border 1px solid $line-strong;
+    border-radius 50%;
+  &::after
+    content ''
+    position absolute
+    width 100%; height 1px;
+    background rgba(255,255,255,0.4);
+    top 50%; left 0;
+
+.printer-tech-label
+  font-family $font-mono
+  font-size 8px
+  color rgba(255,255,255,0.2)
+  margin-top 8px
+  letter-spacing 0.1em
+
+// ─── Center Output Sector ──────────────────────────────────
+.printer-output-unit
+  width $paper-width
+  position relative
+  display flex
+  flex-direction column
+  align-items center
+
+.printer-path-line
+  width 100%
+  height 20px
+  border 1px solid $line-color
+  border-bottom none
+  border-radius 4px 4px 0 0
+  position relative
+  &::before
+    content '▲ FEED DIRECTION'
+    position absolute
+    top -15px
+    left 50%
+    transform translateX(-50%)
+    font-size 8px
+    color $accent
+    opacity 0.6
+    letter-spacing 0.2em
+
+.printer-slot__slit
+  width 100%
+  height 2px
+  background #141414
+  position relative
+  z-index 170 
+  &::after
+    content ''
+    position absolute
+    bottom -4px
+    left -10px
+    right -10px
+    height 1px
+    background $line-strong 
+
+.printer-tech-tag
+  position absolute
+  right -100px
+  bottom 10px
+  font-family $font-mono
+  font-size 9px
+  color rgba(255,255,255,0.15)
+  border-left 1px solid $accent
+  padding-left 8px
+  white-space nowrap
+
+// ─── Paper Body ────────────────────────────────────────────
+.main.printer-paper
+  background $paper
+  position relative
+  z-index 50
+  max-width $paper-width
+  margin 0 auto
+  margin-top -1px 
+  min-height calc(100vh - 56px - 100px)
+  padding-top 40px
+  
+  animation paper-technical-in 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards
+
+  box-shadow 0 0 40px rgba(0,0,0,0.3)
+
+  &::after
+    content ''
+    position absolute
+    top 0; left 0; right 0; bottom 0;
+    pointer-events none
+    z-index 2
+    opacity 0.2
+    background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")
+
+@keyframes paper-technical-in
+  from
+    transform translateY(-30px)
+    opacity 0
+  to
+    transform translateY(0)
+    opacity 1
+
+// ─── Paper Tear Edge ───────────────────────────────────────
+.paper-tear
+  height 20px
+  background $paper
+  position relative
+  &::after
+    content ''
+    position absolute
+    bottom -10px
+    left 0
+    right 0
+    height 20px
+    background linear-gradient(135deg, $paper 33.33%, transparent 33.33%) -12px 0, linear-gradient(225deg, $paper 33.33%, transparent 33.33%) -12px 0
+    background-size 24px 20px
+    background-repeat repeat-x
+
+// ─── Color Overrides for Paper Content ─────────────────────
+.printer-paper
+  color $ink
+  .container
+    position relative
+    z-index 3
+  .section-header__title
+    color $ink
+  .section-header__desc
+    color $ink-muted
+  .section-header__line
+    border-bottom-color $ink-line
+  .featured-list
+    background $ink-line
+    border-color $ink-line
+  .featured-item
+    background $paper
+  .featured-item__label
+    color $accent
+  .featured-item__title a
+    color $ink
+    &:hover
+      color $accent
+  .featured-item__excerpt
+    color $ink-muted
+  .featured-item__meta
+    color $ink-dim
+  .featured-item__sep
+    color $ink-dim
+  .chronicle-month__label
+    color $ink-dim
+    border-bottom-color $ink-line
+  .post-card
+    border-bottom-color $ink-line
+  .post-card__date
+    color $ink-dim
+  .post-card__title a
+    color $ink
+    &:hover
+      color $accent
+  .post-card__excerpt
+    color $ink-muted
+  .tag-pill
+    color $ink-muted
+    border-color $ink-line-strong
+    &:hover
+      color $accent
+      border-color $accent
+  .post__title
+    color $ink
+  .post__meta
+    color $ink-muted
+  .post__sep
+    color $ink-dim
+  .post__reading-time
+    color $ink-dim
+  .post__category
+    color $ink-muted
+    &:hover
+      color $accent
+  .post__tags .tag-pill
+    color $ink-muted
+    border-color $ink-line-strong
+  .post__header
+    border-bottom-color $ink-line
+  .post__content
+    color $ink
+    h1, h2, h3, h4, h5, h6
+      color $ink
+    h2
+      border-bottom-color $ink-line
+    blockquote
+      background $paper-edge
+      color $ink-muted
+      border-left-color $accent
+    code
+      background $paper-edge
+      border-color $ink-line
+      color $ink
+    pre
+      background #2b2520
+      border-color $ink-line
+      code
+        background none
+        color #e8e4df
+    a
+      color $accent
+    table
+      th, td
+        border-bottom-color $ink-line
+      th
+        color $ink-muted
+      tr:hover td
+        background $paper-edge
+    hr
+      border-top-color $ink-line
+  .post__copyright
+    border-color $ink-line
+    color $ink-muted
+    a
+      color $accent
+  .post-nav
+    border-top-color $ink-line
+  .post-nav__label
+    color $ink-dim
+  .post-nav__title a
+    color $ink
+    &:hover
+      color $accent
+  .tag-cloud__item
+    border-color $ink-line-strong
+    color $ink-muted
+    &:hover
+      color $accent
+      border-color $accent
+  .tag-cloud__count
+    color $ink-dim
+    background rgba(0, 0, 0, 0.04)
+  .toc-toggle
+    border-color $ink-line-strong
+    color $ink-muted
+    &:hover
+      color $ink
+      border-color $accent
+  .toc
+    border-left-color $ink-line
+    a
+      color $ink-muted
+      &:hover
+        color $accent
+
+// ─── LED Indicator ──────────────────────────────────────────
+.printer-led
+  position absolute
+  right 20px
+  bottom 20px
+  width 8px
+  height 8px
+  border 1px solid $line-strong
+  &.is-active
+    background $accent
+    box-shadow 0 0 10px $accent
+
+// ─── Responsive ────────────────────────────────────────────
+@media (max-width: 900px)
+  .printer-slot
+    height 70px
+  .printer-gear-unit
+    display none
+  .printer-output-unit
+    width 100%
+  .main.printer-paper
+    max-width 100%
+    box-shadow none
+    padding-top 30px
+    animation none
+
+@media (max-width: 1200px) and (min-width: 769px)
+  .main.printer-paper
+    max-width $paper-width
