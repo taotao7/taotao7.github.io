@@ -333,17 +333,35 @@ $paper-width    = 680px
 
 // ─── Responsive ────────────────────────────────────────────
 @media (max-width: 900px)
+  html
+    overflow-x hidden
+  body
+    background $paper
+    overflow-x hidden
+    width 100%
+  .header
+    width 100%
   .printer-slot
     height 70px
+    top 50px
+    width 100%
+    overflow hidden
   .printer-gear-unit
     display none
   .printer-output-unit
     width 100%
+  .printer-tech-tag
+    display none
+  .printer-path-line::before
+    font-size 7px
   .main.printer-paper
     max-width 100%
+    width 100%
     box-shadow none
     padding-top 30px
     animation none
+  .paper-tear
+    display none
 
 @media (max-width: 1200px) and (min-width: 769px)
   .main.printer-paper

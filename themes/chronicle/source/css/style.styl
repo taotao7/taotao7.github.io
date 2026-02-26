@@ -49,6 +49,25 @@ $sp-3xl = 96px
 $max-width = 1040px
 $radius    = 2px
 
+// ─── Scrollbar ──────────────────────────────────────────
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+::-webkit-scrollbar-track
+  background transparent
+
+::-webkit-scrollbar-thumb
+  background rgba(138, 133, 128, 0.3)
+  border-radius 3px
+  &:hover
+    background rgba(138, 133, 128, 0.5)
+
+// Firefox
+*
+  scrollbar-width thin
+  scrollbar-color rgba(138, 133, 128, 0.3) transparent
+
 // ─── Reset & Base ─────────────────────────────────────
 *
 *::before
@@ -580,22 +599,37 @@ img
   margin-top $sp-3xl
   padding $sp-xl 0
   border-top 1px solid $line
-  text-align center
   font-size $fs-sm
   color $text-muted
 
-.footer__social
+.footer__inner
   display flex
-  justify-content center
+  align-items center
+  justify-content space-between
+
+.footer__left
+  display flex
+  align-items center
+  gap $sp-sm
+  flex-wrap wrap
+
+.footer__sep
+  color $text-dim
+
+.footer__right
+  display flex
   gap $sp-lg
-  margin-bottom $sp-lg
-  a
-    color $text-muted
-    &:hover
-      color $accent
+
+.footer__social
+  color $text-muted
+  &:hover
+    color $accent
 
 // ─── Responsive ──────────────────────────────────────
 @media (max-width: 768px)
+  .container
+    padding 0 $sp-md
+
   .header__inner
     height 50px
 
@@ -619,8 +653,41 @@ img
   .section-header__title
     font-size $fs-lg
 
+  .main
+    padding-top $sp-xl
+    padding-bottom $sp-2xl
+
+  .section
+    margin-bottom $sp-xl
+
   .post__title
     font-size $fs-xl
+
+  .post__header
+    margin-bottom $sp-lg
+    padding-bottom $sp-md
+
+  .post__meta
+    flex-wrap wrap
+
+  .post__content
+    font-size $fs-base
+    word-break break-word
+    overflow-wrap break-word
+    pre
+      margin 1em 0
+      padding $sp-md
+    blockquote
+      padding $sp-sm $sp-md
+
+  .post__copyright
+    word-break break-all
+
+  .featured-item
+    padding $sp-md
+
+  .featured-item__title
+    font-size $fs-lg
 
   .post-card
     flex-direction column
@@ -635,6 +702,11 @@ img
 
   .post-nav__item
     max-width 100%
+    text-align center
+
+  .footer__inner
+    flex-direction column
+    gap $sp-sm
     text-align center
 
 // ─── Back to Top ─────────────────────────────────────
